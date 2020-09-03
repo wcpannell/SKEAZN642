@@ -1,0 +1,25 @@
+[package]
+name = "SKEAZN642"
+version = "0.1.0"
+authors = ["W. Clayton Pannell <clayton.pannell@gmail.com>"]
+edition = "2018"
+description = "Device support crate for KEAZN64 devices."
+repository = "https://github.com/wcpannell/SKEAZN642"
+readme = "README.md"
+keywords = ["kea", "kea64", "keazn64", "nxp", "freescale", "svd2rust", "no_std", "embedded"]
+categories = ["embedded", "no-std"]
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bare-metal = "0.2.0"
+cortex-m = "0.5.8"
+vcell = "0.1.0"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.5"
+
+[features]
+rt = ["cortex-m-rt/device"]

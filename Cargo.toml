@@ -7,7 +7,7 @@ description = "Device support crate for KEAZN64 devices."
 repository = "https://github.com/wcpannell/SKEAZN642"
 readme = "README.md"
 keywords = ["keazn64", "nxp", "svd2rust", "no_std", "embedded"]
-categories = ["embedded", "no_std"]
+categories = ["embedded", "no-std"]
 license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

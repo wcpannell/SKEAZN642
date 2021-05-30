@@ -2,105 +2,51 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - UART Baud Rate Register: High"]
-    pub bdh: BDH,
+    pub bdh: crate::Reg<bdh::BDH_SPEC>,
     #[doc = "0x01 - UART Baud Rate Register: Low"]
-    pub bdl: BDL,
+    pub bdl: crate::Reg<bdl::BDL_SPEC>,
     #[doc = "0x02 - UART Control Register 1"]
-    pub c1: C1,
+    pub c1: crate::Reg<c1::C1_SPEC>,
     #[doc = "0x03 - UART Control Register 2"]
-    pub c2: C2,
+    pub c2: crate::Reg<c2::C2_SPEC>,
     #[doc = "0x04 - UART Status Register 1"]
-    pub s1: S1,
+    pub s1: crate::Reg<s1::S1_SPEC>,
     #[doc = "0x05 - UART Status Register 2"]
-    pub s2: S2,
+    pub s2: crate::Reg<s2::S2_SPEC>,
     #[doc = "0x06 - UART Control Register 3"]
-    pub c3: C3,
+    pub c3: crate::Reg<c3::C3_SPEC>,
     #[doc = "0x07 - UART Data Register"]
-    pub d: D,
+    pub d: crate::Reg<d::D_SPEC>,
 }
-#[doc = "UART Baud Rate Register: High\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bdh](bdh) module"]
-pub type BDH = crate::Reg<u8, _BDH>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BDH;
-#[doc = "`read()` method returns [bdh::R](bdh::R) reader structure"]
-impl crate::Readable for BDH {}
-#[doc = "`write(|w| ..)` method takes [bdh::W](bdh::W) writer structure"]
-impl crate::Writable for BDH {}
+#[doc = "BDH register accessor: an alias for `Reg<BDH_SPEC>`"]
+pub type BDH = crate::Reg<bdh::BDH_SPEC>;
 #[doc = "UART Baud Rate Register: High"]
 pub mod bdh;
-#[doc = "UART Baud Rate Register: Low\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bdl](bdl) module"]
-pub type BDL = crate::Reg<u8, _BDL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BDL;
-#[doc = "`read()` method returns [bdl::R](bdl::R) reader structure"]
-impl crate::Readable for BDL {}
-#[doc = "`write(|w| ..)` method takes [bdl::W](bdl::W) writer structure"]
-impl crate::Writable for BDL {}
+#[doc = "BDL register accessor: an alias for `Reg<BDL_SPEC>`"]
+pub type BDL = crate::Reg<bdl::BDL_SPEC>;
 #[doc = "UART Baud Rate Register: Low"]
 pub mod bdl;
-#[doc = "UART Control Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c1](c1) module"]
-pub type C1 = crate::Reg<u8, _C1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _C1;
-#[doc = "`read()` method returns [c1::R](c1::R) reader structure"]
-impl crate::Readable for C1 {}
-#[doc = "`write(|w| ..)` method takes [c1::W](c1::W) writer structure"]
-impl crate::Writable for C1 {}
+#[doc = "C1 register accessor: an alias for `Reg<C1_SPEC>`"]
+pub type C1 = crate::Reg<c1::C1_SPEC>;
 #[doc = "UART Control Register 1"]
 pub mod c1;
-#[doc = "UART Control Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c2](c2) module"]
-pub type C2 = crate::Reg<u8, _C2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _C2;
-#[doc = "`read()` method returns [c2::R](c2::R) reader structure"]
-impl crate::Readable for C2 {}
-#[doc = "`write(|w| ..)` method takes [c2::W](c2::W) writer structure"]
-impl crate::Writable for C2 {}
+#[doc = "C2 register accessor: an alias for `Reg<C2_SPEC>`"]
+pub type C2 = crate::Reg<c2::C2_SPEC>;
 #[doc = "UART Control Register 2"]
 pub mod c2;
-#[doc = "UART Status Register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s1](s1) module"]
-pub type S1 = crate::Reg<u8, _S1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _S1;
-#[doc = "`read()` method returns [s1::R](s1::R) reader structure"]
-impl crate::Readable for S1 {}
+#[doc = "S1 register accessor: an alias for `Reg<S1_SPEC>`"]
+pub type S1 = crate::Reg<s1::S1_SPEC>;
 #[doc = "UART Status Register 1"]
 pub mod s1;
-#[doc = "UART Status Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s2](s2) module"]
-pub type S2 = crate::Reg<u8, _S2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _S2;
-#[doc = "`read()` method returns [s2::R](s2::R) reader structure"]
-impl crate::Readable for S2 {}
-#[doc = "`write(|w| ..)` method takes [s2::W](s2::W) writer structure"]
-impl crate::Writable for S2 {}
+#[doc = "S2 register accessor: an alias for `Reg<S2_SPEC>`"]
+pub type S2 = crate::Reg<s2::S2_SPEC>;
 #[doc = "UART Status Register 2"]
 pub mod s2;
-#[doc = "UART Control Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c3](c3) module"]
-pub type C3 = crate::Reg<u8, _C3>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _C3;
-#[doc = "`read()` method returns [c3::R](c3::R) reader structure"]
-impl crate::Readable for C3 {}
-#[doc = "`write(|w| ..)` method takes [c3::W](c3::W) writer structure"]
-impl crate::Writable for C3 {}
+#[doc = "C3 register accessor: an alias for `Reg<C3_SPEC>`"]
+pub type C3 = crate::Reg<c3::C3_SPEC>;
 #[doc = "UART Control Register 3"]
 pub mod c3;
-#[doc = "UART Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [d](d) module"]
-pub type D = crate::Reg<u8, _D>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _D;
-#[doc = "`read()` method returns [d::R](d::R) reader structure"]
-impl crate::Readable for D {}
-#[doc = "`write(|w| ..)` method takes [d::W](d::W) writer structure"]
-impl crate::Writable for D {}
+#[doc = "D register accessor: an alias for `Reg<D_SPEC>`"]
+pub type D = crate::Reg<d::D_SPEC>;
 #[doc = "UART Data Register"]
 pub mod d;

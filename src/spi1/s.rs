@@ -1,5 +1,17 @@
-#[doc = "Reader of register S"]
-pub type R = crate::R<u8, super::S>;
+#[doc = "Register `S` reader"]
+pub struct R(crate::R<S_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<S_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<S_SPEC>> for R {
+    fn from(reader: crate::R<S_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Master Mode Fault Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODF_A {
@@ -14,9 +26,12 @@ impl From<MODF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MODF`"]
-pub type MODF_R = crate::R<bool, MODF_A>;
+#[doc = "Field `MODF` reader - Master Mode Fault Flag"]
+pub struct MODF_R(crate::FieldReader<bool, MODF_A>);
 impl MODF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MODF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODF_A {
@@ -28,12 +43,19 @@ impl MODF_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == MODF_A::_0
+        **self == MODF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == MODF_A::_1
+        **self == MODF_A::_1
+    }
+}
+impl core::ops::Deref for MODF_R {
+    type Target = crate::FieldReader<bool, MODF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "SPI Transmit Buffer Empty Flag\n\nValue on reset: 1"]
@@ -50,9 +72,12 @@ impl From<SPTEF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SPTEF`"]
-pub type SPTEF_R = crate::R<bool, SPTEF_A>;
+#[doc = "Field `SPTEF` reader - SPI Transmit Buffer Empty Flag"]
+pub struct SPTEF_R(crate::FieldReader<bool, SPTEF_A>);
 impl SPTEF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SPTEF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SPTEF_A {
@@ -64,12 +89,19 @@ impl SPTEF_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SPTEF_A::_0
+        **self == SPTEF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SPTEF_A::_1
+        **self == SPTEF_A::_1
+    }
+}
+impl core::ops::Deref for SPTEF_R {
+    type Target = crate::FieldReader<bool, SPTEF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "SPI Match Flag\n\nValue on reset: 0"]
@@ -86,9 +118,12 @@ impl From<SPMF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SPMF`"]
-pub type SPMF_R = crate::R<bool, SPMF_A>;
+#[doc = "Field `SPMF` reader - SPI Match Flag"]
+pub struct SPMF_R(crate::FieldReader<bool, SPMF_A>);
 impl SPMF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SPMF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SPMF_A {
@@ -100,12 +135,19 @@ impl SPMF_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SPMF_A::_0
+        **self == SPMF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SPMF_A::_1
+        **self == SPMF_A::_1
+    }
+}
+impl core::ops::Deref for SPMF_R {
+    type Target = crate::FieldReader<bool, SPMF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "SPI Read Buffer Full Flag\n\nValue on reset: 0"]
@@ -122,9 +164,12 @@ impl From<SPRF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SPRF`"]
-pub type SPRF_R = crate::R<bool, SPRF_A>;
+#[doc = "Field `SPRF` reader - SPI Read Buffer Full Flag"]
+pub struct SPRF_R(crate::FieldReader<bool, SPRF_A>);
 impl SPRF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SPRF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SPRF_A {
@@ -136,12 +181,19 @@ impl SPRF_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SPRF_A::_0
+        **self == SPRF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SPRF_A::_1
+        **self == SPRF_A::_1
+    }
+}
+impl core::ops::Deref for SPRF_R {
+    type Target = crate::FieldReader<bool, SPRF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -164,5 +216,21 @@ impl R {
     #[inline(always)]
     pub fn sprf(&self) -> SPRF_R {
         SPRF_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+}
+#[doc = "SPI Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s](index.html) module"]
+pub struct S_SPEC;
+impl crate::RegisterSpec for S_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [s::R](R) reader structure"]
+impl crate::Readable for S_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets S to value 0x20"]
+impl crate::Resettable for S_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x20
     }
 }

@@ -11235,7 +11235,7 @@
           <description>ICS Status Register</description>
           <addressOffset>0x4</addressOffset>
           <size>8</size>
-          <access>read-only</access>
+          <access>read-write</access>
           <resetValue>0x10</resetValue>
           <resetMask>0xFF</resetMask>
           <fields>
@@ -11325,7 +11325,8 @@
               <description>Loss of Lock Status</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-only</access>
+	      <access>read-write</access>
+	      <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>0</name>

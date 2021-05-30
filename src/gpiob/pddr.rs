@@ -1,13 +1,35 @@
-#[doc = "Reader of register PDDR"]
-pub type R = crate::R<u32, super::PDDR>;
-#[doc = "Writer for register PDDR"]
-pub type W = crate::W<u32, super::PDDR>;
-#[doc = "Register PDDR `reset()`'s with value 0"]
-impl crate::ResetValue for super::PDDR {
-    type Type = u32;
+#[doc = "Register `PDDR` reader"]
+pub struct R(crate::R<PDDR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PDDR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PDDR_SPEC>> for R {
+    fn from(reader: crate::R<PDDR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PDDR` writer"]
+pub struct W(crate::W<PDDR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PDDR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PDDR_SPEC>> for W {
+    fn from(writer: crate::W<PDDR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Port Data Direction\n\nValue on reset: 0"]
@@ -25,31 +47,40 @@ impl From<PDD_A> for u32 {
         variant as _
     }
 }
-#[doc = "Reader of field `PDD`"]
-pub type PDD_R = crate::R<u32, PDD_A>;
+#[doc = "Field `PDD` reader - Port Data Direction"]
+pub struct PDD_R(crate::FieldReader<u32, PDD_A>);
 impl PDD_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        PDD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u32, PDD_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PDD_A> {
         match self.bits {
-            0 => Val(PDD_A::_0),
-            1 => Val(PDD_A::_1),
-            i => Res(i),
+            0 => Some(PDD_A::_0),
+            1 => Some(PDD_A::_1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PDD_A::_0
+        **self == PDD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PDD_A::_1
+        **self == PDD_A::_1
     }
 }
-#[doc = "Write proxy for field `PDD`"]
+impl core::ops::Deref for PDD_R {
+    type Target = crate::FieldReader<u32, PDD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDD` writer - Port Data Direction"]
 pub struct PDD_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +103,7 @@ impl<'a> PDD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
         self.w
     }
 }
@@ -88,5 +119,30 @@ impl W {
     #[inline(always)]
     pub fn pdd(&mut self) -> PDD_W {
         PDD_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port Data Direction Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pddr](index.html) module"]
+pub struct PDDR_SPEC;
+impl crate::RegisterSpec for PDDR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pddr::R](R) reader structure"]
+impl crate::Readable for PDDR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pddr::W](W) writer structure"]
+impl crate::Writable for PDDR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PDDR to value 0"]
+impl crate::Resettable for PDDR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

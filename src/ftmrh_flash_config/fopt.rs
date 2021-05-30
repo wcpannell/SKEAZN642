@@ -1,3 +1,30 @@
-#[doc = "Reader of register FOPT"]
-pub type R = crate::R<u8, super::FOPT>;
-impl R {}
+#[doc = "Register `FOPT` reader"]
+pub struct R(crate::R<FOPT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FOPT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<FOPT_SPEC>> for R {
+    fn from(reader: crate::R<FOPT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Non-volatile Flash Option Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fopt](index.html) module"]
+pub struct FOPT_SPEC;
+impl crate::RegisterSpec for FOPT_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [fopt::R](R) reader structure"]
+impl crate::Readable for FOPT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets FOPT to value 0xff"]
+impl crate::Resettable for FOPT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xff
+    }
+}

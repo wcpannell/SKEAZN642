@@ -1,16 +1,38 @@
-#[doc = "Reader of register PLACR"]
-pub type R = crate::R<u32, super::PLACR>;
-#[doc = "Writer for register PLACR"]
-pub type W = crate::W<u32, super::PLACR>;
-#[doc = "Register PLACR `reset()`'s with value 0x0800"]
-impl crate::ResetValue for super::PLACR {
-    type Type = u32;
+#[doc = "Register `PLACR` reader"]
+pub struct R(crate::R<PLACR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PLACR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0800
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `CFCC`"]
+impl core::convert::From<crate::R<PLACR_SPEC>> for R {
+    fn from(reader: crate::R<PLACR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PLACR` writer"]
+pub struct W(crate::W<PLACR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PLACR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PLACR_SPEC>> for W {
+    fn from(writer: crate::W<PLACR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CFCC` writer - Clear Flash Controller Cache"]
 pub struct CFCC_W<'a> {
     w: &'a mut W,
 }
@@ -28,7 +50,7 @@ impl<'a> CFCC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -46,9 +68,12 @@ impl From<DFCDA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DFCDA`"]
-pub type DFCDA_R = crate::R<bool, DFCDA_A>;
+#[doc = "Field `DFCDA` reader - Disable Flash Controller Data Caching"]
+pub struct DFCDA_R(crate::FieldReader<bool, DFCDA_A>);
 impl DFCDA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DFCDA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DFCDA_A {
@@ -60,15 +85,22 @@ impl DFCDA_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DFCDA_A::_0
+        **self == DFCDA_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DFCDA_A::_1
+        **self == DFCDA_A::_1
     }
 }
-#[doc = "Write proxy for field `DFCDA`"]
+impl core::ops::Deref for DFCDA_R {
+    type Target = crate::FieldReader<bool, DFCDA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DFCDA` writer - Disable Flash Controller Data Caching"]
 pub struct DFCDA_W<'a> {
     w: &'a mut W,
 }
@@ -76,9 +108,7 @@ impl<'a> DFCDA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DFCDA_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Enable flash controller data caching"]
     #[inline(always)]
@@ -103,7 +133,7 @@ impl<'a> DFCDA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -121,9 +151,12 @@ impl From<DFCIC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DFCIC`"]
-pub type DFCIC_R = crate::R<bool, DFCIC_A>;
+#[doc = "Field `DFCIC` reader - Disable Flash Controller Instruction Caching"]
+pub struct DFCIC_R(crate::FieldReader<bool, DFCIC_A>);
 impl DFCIC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DFCIC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DFCIC_A {
@@ -135,15 +168,22 @@ impl DFCIC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DFCIC_A::_0
+        **self == DFCIC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DFCIC_A::_1
+        **self == DFCIC_A::_1
     }
 }
-#[doc = "Write proxy for field `DFCIC`"]
+impl core::ops::Deref for DFCIC_R {
+    type Target = crate::FieldReader<bool, DFCIC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DFCIC` writer - Disable Flash Controller Instruction Caching"]
 pub struct DFCIC_W<'a> {
     w: &'a mut W,
 }
@@ -151,9 +191,7 @@ impl<'a> DFCIC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DFCIC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Enable flash controller instruction caching."]
     #[inline(always)]
@@ -178,7 +216,7 @@ impl<'a> DFCIC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -196,9 +234,12 @@ impl From<DFCC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DFCC`"]
-pub type DFCC_R = crate::R<bool, DFCC_A>;
+#[doc = "Field `DFCC` reader - Disable Flash Controller Cache"]
+pub struct DFCC_R(crate::FieldReader<bool, DFCC_A>);
 impl DFCC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DFCC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DFCC_A {
@@ -210,15 +251,22 @@ impl DFCC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DFCC_A::_0
+        **self == DFCC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DFCC_A::_1
+        **self == DFCC_A::_1
     }
 }
-#[doc = "Write proxy for field `DFCC`"]
+impl core::ops::Deref for DFCC_R {
+    type Target = crate::FieldReader<bool, DFCC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DFCC` writer - Disable Flash Controller Cache"]
 pub struct DFCC_W<'a> {
     w: &'a mut W,
 }
@@ -226,9 +274,7 @@ impl<'a> DFCC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DFCC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Enable flash controller cache."]
     #[inline(always)]
@@ -253,7 +299,7 @@ impl<'a> DFCC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -271,9 +317,12 @@ impl From<EFDS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EFDS`"]
-pub type EFDS_R = crate::R<bool, EFDS_A>;
+#[doc = "Field `EFDS` reader - Enable Flash Data Speculation"]
+pub struct EFDS_R(crate::FieldReader<bool, EFDS_A>);
 impl EFDS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EFDS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EFDS_A {
@@ -285,15 +334,22 @@ impl EFDS_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == EFDS_A::_0
+        **self == EFDS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == EFDS_A::_1
+        **self == EFDS_A::_1
     }
 }
-#[doc = "Write proxy for field `EFDS`"]
+impl core::ops::Deref for EFDS_R {
+    type Target = crate::FieldReader<bool, EFDS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EFDS` writer - Enable Flash Data Speculation"]
 pub struct EFDS_W<'a> {
     w: &'a mut W,
 }
@@ -301,9 +357,7 @@ impl<'a> EFDS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EFDS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disable flash data speculation."]
     #[inline(always)]
@@ -328,7 +382,7 @@ impl<'a> EFDS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -346,9 +400,12 @@ impl From<DFCS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DFCS`"]
-pub type DFCS_R = crate::R<bool, DFCS_A>;
+#[doc = "Field `DFCS` reader - Disable Flash Controller Speculation"]
+pub struct DFCS_R(crate::FieldReader<bool, DFCS_A>);
 impl DFCS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DFCS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DFCS_A {
@@ -360,15 +417,22 @@ impl DFCS_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DFCS_A::_0
+        **self == DFCS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DFCS_A::_1
+        **self == DFCS_A::_1
     }
 }
-#[doc = "Write proxy for field `DFCS`"]
+impl core::ops::Deref for DFCS_R {
+    type Target = crate::FieldReader<bool, DFCS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DFCS` writer - Disable Flash Controller Speculation"]
 pub struct DFCS_W<'a> {
     w: &'a mut W,
 }
@@ -376,9 +440,7 @@ impl<'a> DFCS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DFCS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Enable flash controller speculation."]
     #[inline(always)]
@@ -403,7 +465,7 @@ impl<'a> DFCS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -421,9 +483,12 @@ impl From<ESFC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ESFC`"]
-pub type ESFC_R = crate::R<bool, ESFC_A>;
+#[doc = "Field `ESFC` reader - Enable Stalling Flash Controller"]
+pub struct ESFC_R(crate::FieldReader<bool, ESFC_A>);
 impl ESFC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ESFC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ESFC_A {
@@ -435,15 +500,22 @@ impl ESFC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == ESFC_A::_0
+        **self == ESFC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == ESFC_A::_1
+        **self == ESFC_A::_1
     }
 }
-#[doc = "Write proxy for field `ESFC`"]
+impl core::ops::Deref for ESFC_R {
+    type Target = crate::FieldReader<bool, ESFC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ESFC` writer - Enable Stalling Flash Controller"]
 pub struct ESFC_W<'a> {
     w: &'a mut W,
 }
@@ -451,9 +523,7 @@ impl<'a> ESFC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ESFC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disable stalling flash controller when flash is busy."]
     #[inline(always)]
@@ -478,7 +548,7 @@ impl<'a> ESFC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -549,5 +619,30 @@ impl W {
     #[inline(always)]
     pub fn esfc(&mut self) -> ESFC_W {
         ESFC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Platform Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [placr](index.html) module"]
+pub struct PLACR_SPEC;
+impl crate::RegisterSpec for PLACR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [placr::R](R) reader structure"]
+impl crate::Readable for PLACR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [placr::W](W) writer structure"]
+impl crate::Writable for PLACR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PLACR to value 0x0800"]
+impl crate::Resettable for PLACR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0800
     }
 }

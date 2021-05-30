@@ -1,18 +1,52 @@
-#[doc = "Reader of register F"]
-pub type R = crate::R<u8, super::F>;
-#[doc = "Writer for register F"]
-pub type W = crate::W<u8, super::F>;
-#[doc = "Register F `reset()`'s with value 0"]
-impl crate::ResetValue for super::F {
-    type Type = u8;
+#[doc = "Register `F` reader"]
+pub struct R(crate::R<F_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<F_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ICR`"]
-pub type ICR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ICR`"]
+impl core::convert::From<crate::R<F_SPEC>> for R {
+    fn from(reader: crate::R<F_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `F` writer"]
+pub struct W(crate::W<F_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<F_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<F_SPEC>> for W {
+    fn from(writer: crate::W<F_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ICR` reader - ClockRate"]
+pub struct ICR_R(crate::FieldReader<u8, u8>);
+impl ICR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ICR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ICR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICR` writer - ClockRate"]
 pub struct ICR_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> ICR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u8) & 0x3f);
+        self.w.bits = (self.w.bits & !0x3f) | (value as u8 & 0x3f);
         self.w
     }
 }
@@ -43,9 +77,12 @@ impl From<MULT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MULT`"]
-pub type MULT_R = crate::R<u8, MULT_A>;
+#[doc = "Field `MULT` reader - no description available"]
+pub struct MULT_R(crate::FieldReader<u8, MULT_A>);
 impl MULT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MULT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MULT_A {
@@ -60,25 +97,32 @@ impl MULT_R {
     #[doc = "Checks if the value of the field is `_00`"]
     #[inline(always)]
     pub fn is_00(&self) -> bool {
-        *self == MULT_A::_00
+        **self == MULT_A::_00
     }
     #[doc = "Checks if the value of the field is `_01`"]
     #[inline(always)]
     pub fn is_01(&self) -> bool {
-        *self == MULT_A::_01
+        **self == MULT_A::_01
     }
     #[doc = "Checks if the value of the field is `_10`"]
     #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == MULT_A::_10
+        **self == MULT_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
     #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == MULT_A::_11
+        **self == MULT_A::_11
     }
 }
-#[doc = "Write proxy for field `MULT`"]
+impl core::ops::Deref for MULT_R {
+    type Target = crate::FieldReader<u8, MULT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MULT` writer - no description available"]
 pub struct MULT_W<'a> {
     w: &'a mut W,
 }
@@ -86,9 +130,7 @@ impl<'a> MULT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MULT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "mul = 1"]
     #[inline(always)]
@@ -113,7 +155,7 @@ impl<'a> MULT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u8) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u8 & 0x03) << 6);
         self.w
     }
 }
@@ -139,5 +181,30 @@ impl W {
     #[inline(always)]
     pub fn mult(&mut self) -> MULT_W {
         MULT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I2C Frequency Divider register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [f](index.html) module"]
+pub struct F_SPEC;
+impl crate::RegisterSpec for F_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [f::R](R) reader structure"]
+impl crate::Readable for F_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [f::W](W) writer structure"]
+impl crate::Writable for F_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets F to value 0"]
+impl crate::Resettable for F_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

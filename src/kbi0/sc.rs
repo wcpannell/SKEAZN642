@@ -1,13 +1,35 @@
-#[doc = "Reader of register SC"]
-pub type R = crate::R<u8, super::SC>;
-#[doc = "Writer for register SC"]
-pub type W = crate::W<u8, super::SC>;
-#[doc = "Register SC `reset()`'s with value 0"]
-impl crate::ResetValue for super::SC {
-    type Type = u8;
+#[doc = "Register `SC` reader"]
+pub struct R(crate::R<SC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SC_SPEC>> for R {
+    fn from(reader: crate::R<SC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SC` writer"]
+pub struct W(crate::W<SC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SC_SPEC>> for W {
+    fn from(writer: crate::W<SC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "KBI Detection Mode\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<KBMOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `KBMOD`"]
-pub type KBMOD_R = crate::R<bool, KBMOD_A>;
+#[doc = "Field `KBMOD` reader - KBI Detection Mode"]
+pub struct KBMOD_R(crate::FieldReader<bool, KBMOD_A>);
 impl KBMOD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        KBMOD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> KBMOD_A {
@@ -38,15 +63,22 @@ impl KBMOD_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == KBMOD_A::_0
+        **self == KBMOD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == KBMOD_A::_1
+        **self == KBMOD_A::_1
     }
 }
-#[doc = "Write proxy for field `KBMOD`"]
+impl core::ops::Deref for KBMOD_R {
+    type Target = crate::FieldReader<bool, KBMOD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `KBMOD` writer - KBI Detection Mode"]
 pub struct KBMOD_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> KBMOD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: KBMOD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Keyboard detects edges only."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> KBMOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<KBIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `KBIE`"]
-pub type KBIE_R = crate::R<bool, KBIE_A>;
+#[doc = "Field `KBIE` reader - KBI Interrupt Enable"]
+pub struct KBIE_R(crate::FieldReader<bool, KBIE_A>);
 impl KBIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        KBIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> KBIE_A {
@@ -113,15 +146,22 @@ impl KBIE_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == KBIE_A::_0
+        **self == KBIE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == KBIE_A::_1
+        **self == KBIE_A::_1
     }
 }
-#[doc = "Write proxy for field `KBIE`"]
+impl core::ops::Deref for KBIE_R {
+    type Target = crate::FieldReader<bool, KBIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `KBIE` writer - KBI Interrupt Enable"]
 pub struct KBIE_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> KBIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: KBIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "KBI interrupt not enabled."]
     #[inline(always)]
@@ -156,11 +194,11 @@ impl<'a> KBIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `KBACK`"]
+#[doc = "Field `KBACK` writer - KBI Acknowledge"]
 pub struct KBACK_W<'a> {
     w: &'a mut W,
 }
@@ -178,7 +216,7 @@ impl<'a> KBACK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
         self.w
     }
 }
@@ -196,9 +234,12 @@ impl From<KBF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `KBF`"]
-pub type KBF_R = crate::R<bool, KBF_A>;
+#[doc = "Field `KBF` reader - KBI Interrupt Flag"]
+pub struct KBF_R(crate::FieldReader<bool, KBF_A>);
 impl KBF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        KBF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> KBF_A {
@@ -210,12 +251,19 @@ impl KBF_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == KBF_A::_0
+        **self == KBF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == KBF_A::_1
+        **self == KBF_A::_1
+    }
+}
+impl core::ops::Deref for KBF_R {
+    type Target = crate::FieldReader<bool, KBF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -250,5 +298,30 @@ impl W {
     #[inline(always)]
     pub fn kback(&mut self) -> KBACK_W {
         KBACK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "KBI Status and Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sc](index.html) module"]
+pub struct SC_SPEC;
+impl crate::RegisterSpec for SC_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [sc::R](R) reader structure"]
+impl crate::Readable for SC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sc::W](W) writer structure"]
+impl crate::Writable for SC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SC to value 0"]
+impl crate::Resettable for SC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,52 @@
-#[doc = "Reader of register DEADTIME"]
-pub type R = crate::R<u32, super::DEADTIME>;
-#[doc = "Writer for register DEADTIME"]
-pub type W = crate::W<u32, super::DEADTIME>;
-#[doc = "Register DEADTIME `reset()`'s with value 0"]
-impl crate::ResetValue for super::DEADTIME {
-    type Type = u32;
+#[doc = "Register `DEADTIME` reader"]
+pub struct R(crate::R<DEADTIME_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DEADTIME_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DTVAL`"]
-pub type DTVAL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DTVAL`"]
+impl core::convert::From<crate::R<DEADTIME_SPEC>> for R {
+    fn from(reader: crate::R<DEADTIME_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DEADTIME` writer"]
+pub struct W(crate::W<DEADTIME_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DEADTIME_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<DEADTIME_SPEC>> for W {
+    fn from(writer: crate::W<DEADTIME_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DTVAL` reader - Deadtime Value"]
+pub struct DTVAL_R(crate::FieldReader<u8, u8>);
+impl DTVAL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DTVAL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DTVAL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTVAL` writer - Deadtime Value"]
 pub struct DTVAL_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> DTVAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
         self.w
     }
 }
@@ -41,37 +75,46 @@ impl From<DTPS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DTPS`"]
-pub type DTPS_R = crate::R<u8, DTPS_A>;
+#[doc = "Field `DTPS` reader - Deadtime Prescaler Value"]
+pub struct DTPS_R(crate::FieldReader<u8, DTPS_A>);
 impl DTPS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DTPS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DTPS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DTPS_A> {
         match self.bits {
-            0 => Val(DTPS_A::_0X),
-            2 => Val(DTPS_A::_10),
-            3 => Val(DTPS_A::_11),
-            i => Res(i),
+            0 => Some(DTPS_A::_0X),
+            2 => Some(DTPS_A::_10),
+            3 => Some(DTPS_A::_11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_0X`"]
     #[inline(always)]
     pub fn is_0x(&self) -> bool {
-        *self == DTPS_A::_0X
+        **self == DTPS_A::_0X
     }
     #[doc = "Checks if the value of the field is `_10`"]
     #[inline(always)]
     pub fn is_10(&self) -> bool {
-        *self == DTPS_A::_10
+        **self == DTPS_A::_10
     }
     #[doc = "Checks if the value of the field is `_11`"]
     #[inline(always)]
     pub fn is_11(&self) -> bool {
-        *self == DTPS_A::_11
+        **self == DTPS_A::_11
     }
 }
-#[doc = "Write proxy for field `DTPS`"]
+impl core::ops::Deref for DTPS_R {
+    type Target = crate::FieldReader<u8, DTPS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTPS` writer - Deadtime Prescaler Value"]
 pub struct DTPS_W<'a> {
     w: &'a mut W,
 }
@@ -99,7 +142,7 @@ impl<'a> DTPS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
@@ -125,5 +168,30 @@ impl W {
     #[inline(always)]
     pub fn dtps(&mut self) -> DTPS_W {
         DTPS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Deadtime Insertion Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deadtime](index.html) module"]
+pub struct DEADTIME_SPEC;
+impl crate::RegisterSpec for DEADTIME_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [deadtime::R](R) reader structure"]
+impl crate::Readable for DEADTIME_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [deadtime::W](W) writer structure"]
+impl crate::Writable for DEADTIME_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DEADTIME to value 0"]
+impl crate::Resettable for DEADTIME_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

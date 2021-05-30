@@ -1,13 +1,35 @@
-#[doc = "Reader of register EXTTRIG"]
-pub type R = crate::R<u32, super::EXTTRIG>;
-#[doc = "Writer for register EXTTRIG"]
-pub type W = crate::W<u32, super::EXTTRIG>;
-#[doc = "Register EXTTRIG `reset()`'s with value 0"]
-impl crate::ResetValue for super::EXTTRIG {
-    type Type = u32;
+#[doc = "Register `EXTTRIG` reader"]
+pub struct R(crate::R<EXTTRIG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EXTTRIG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<EXTTRIG_SPEC>> for R {
+    fn from(reader: crate::R<EXTTRIG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EXTTRIG` writer"]
+pub struct W(crate::W<EXTTRIG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EXTTRIG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<EXTTRIG_SPEC>> for W {
+    fn from(writer: crate::W<EXTTRIG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Channel 2 Trigger Enable\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<CH2TRIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH2TRIG`"]
-pub type CH2TRIG_R = crate::R<bool, CH2TRIG_A>;
+#[doc = "Field `CH2TRIG` reader - Channel 2 Trigger Enable"]
+pub struct CH2TRIG_R(crate::FieldReader<bool, CH2TRIG_A>);
 impl CH2TRIG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2TRIG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2TRIG_A {
@@ -38,15 +63,22 @@ impl CH2TRIG_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH2TRIG_A::_0
+        **self == CH2TRIG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH2TRIG_A::_1
+        **self == CH2TRIG_A::_1
     }
 }
-#[doc = "Write proxy for field `CH2TRIG`"]
+impl core::ops::Deref for CH2TRIG_R {
+    type Target = crate::FieldReader<bool, CH2TRIG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2TRIG` writer - Channel 2 Trigger Enable"]
 pub struct CH2TRIG_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> CH2TRIG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH2TRIG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The generation of the channel trigger is disabled."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> CH2TRIG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<CH3TRIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH3TRIG`"]
-pub type CH3TRIG_R = crate::R<bool, CH3TRIG_A>;
+#[doc = "Field `CH3TRIG` reader - Channel 3 Trigger Enable"]
+pub struct CH3TRIG_R(crate::FieldReader<bool, CH3TRIG_A>);
 impl CH3TRIG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3TRIG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3TRIG_A {
@@ -113,15 +146,22 @@ impl CH3TRIG_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH3TRIG_A::_0
+        **self == CH3TRIG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH3TRIG_A::_1
+        **self == CH3TRIG_A::_1
     }
 }
-#[doc = "Write proxy for field `CH3TRIG`"]
+impl core::ops::Deref for CH3TRIG_R {
+    type Target = crate::FieldReader<bool, CH3TRIG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3TRIG` writer - Channel 3 Trigger Enable"]
 pub struct CH3TRIG_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> CH3TRIG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH3TRIG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The generation of the channel trigger is disabled."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> CH3TRIG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<CH4TRIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH4TRIG`"]
-pub type CH4TRIG_R = crate::R<bool, CH4TRIG_A>;
+#[doc = "Field `CH4TRIG` reader - Channel 4 Trigger Enable"]
+pub struct CH4TRIG_R(crate::FieldReader<bool, CH4TRIG_A>);
 impl CH4TRIG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH4TRIG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH4TRIG_A {
@@ -188,15 +229,22 @@ impl CH4TRIG_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH4TRIG_A::_0
+        **self == CH4TRIG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH4TRIG_A::_1
+        **self == CH4TRIG_A::_1
     }
 }
-#[doc = "Write proxy for field `CH4TRIG`"]
+impl core::ops::Deref for CH4TRIG_R {
+    type Target = crate::FieldReader<bool, CH4TRIG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH4TRIG` writer - Channel 4 Trigger Enable"]
 pub struct CH4TRIG_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> CH4TRIG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH4TRIG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The generation of the channel trigger is disabled."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> CH4TRIG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<CH5TRIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH5TRIG`"]
-pub type CH5TRIG_R = crate::R<bool, CH5TRIG_A>;
+#[doc = "Field `CH5TRIG` reader - Channel 5 Trigger Enable"]
+pub struct CH5TRIG_R(crate::FieldReader<bool, CH5TRIG_A>);
 impl CH5TRIG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH5TRIG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH5TRIG_A {
@@ -263,15 +312,22 @@ impl CH5TRIG_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH5TRIG_A::_0
+        **self == CH5TRIG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH5TRIG_A::_1
+        **self == CH5TRIG_A::_1
     }
 }
-#[doc = "Write proxy for field `CH5TRIG`"]
+impl core::ops::Deref for CH5TRIG_R {
+    type Target = crate::FieldReader<bool, CH5TRIG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH5TRIG` writer - Channel 5 Trigger Enable"]
 pub struct CH5TRIG_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> CH5TRIG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH5TRIG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The generation of the channel trigger is disabled."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> CH5TRIG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<CH0TRIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH0TRIG`"]
-pub type CH0TRIG_R = crate::R<bool, CH0TRIG_A>;
+#[doc = "Field `CH0TRIG` reader - Channel 0 Trigger Enable"]
+pub struct CH0TRIG_R(crate::FieldReader<bool, CH0TRIG_A>);
 impl CH0TRIG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0TRIG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0TRIG_A {
@@ -338,15 +395,22 @@ impl CH0TRIG_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH0TRIG_A::_0
+        **self == CH0TRIG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH0TRIG_A::_1
+        **self == CH0TRIG_A::_1
     }
 }
-#[doc = "Write proxy for field `CH0TRIG`"]
+impl core::ops::Deref for CH0TRIG_R {
+    type Target = crate::FieldReader<bool, CH0TRIG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH0TRIG` writer - Channel 0 Trigger Enable"]
 pub struct CH0TRIG_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> CH0TRIG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH0TRIG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The generation of the channel trigger is disabled."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> CH0TRIG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<CH1TRIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH1TRIG`"]
-pub type CH1TRIG_R = crate::R<bool, CH1TRIG_A>;
+#[doc = "Field `CH1TRIG` reader - Channel 1 Trigger Enable"]
+pub struct CH1TRIG_R(crate::FieldReader<bool, CH1TRIG_A>);
 impl CH1TRIG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1TRIG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1TRIG_A {
@@ -413,15 +478,22 @@ impl CH1TRIG_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH1TRIG_A::_0
+        **self == CH1TRIG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH1TRIG_A::_1
+        **self == CH1TRIG_A::_1
     }
 }
-#[doc = "Write proxy for field `CH1TRIG`"]
+impl core::ops::Deref for CH1TRIG_R {
+    type Target = crate::FieldReader<bool, CH1TRIG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1TRIG` writer - Channel 1 Trigger Enable"]
 pub struct CH1TRIG_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> CH1TRIG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH1TRIG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The generation of the channel trigger is disabled."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> CH1TRIG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<INITTRIGEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INITTRIGEN`"]
-pub type INITTRIGEN_R = crate::R<bool, INITTRIGEN_A>;
+#[doc = "Field `INITTRIGEN` reader - Initialization Trigger Enable"]
+pub struct INITTRIGEN_R(crate::FieldReader<bool, INITTRIGEN_A>);
 impl INITTRIGEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INITTRIGEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INITTRIGEN_A {
@@ -488,15 +561,22 @@ impl INITTRIGEN_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == INITTRIGEN_A::_0
+        **self == INITTRIGEN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == INITTRIGEN_A::_1
+        **self == INITTRIGEN_A::_1
     }
 }
-#[doc = "Write proxy for field `INITTRIGEN`"]
+impl core::ops::Deref for INITTRIGEN_R {
+    type Target = crate::FieldReader<bool, INITTRIGEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INITTRIGEN` writer - Initialization Trigger Enable"]
 pub struct INITTRIGEN_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> INITTRIGEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INITTRIGEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The generation of initialization trigger is disabled."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> INITTRIGEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<TRIGF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TRIGF`"]
-pub type TRIGF_R = crate::R<bool, TRIGF_A>;
+#[doc = "Field `TRIGF` reader - Channel Trigger Flag"]
+pub struct TRIGF_R(crate::FieldReader<bool, TRIGF_A>);
 impl TRIGF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TRIGF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIGF_A {
@@ -563,12 +644,19 @@ impl TRIGF_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TRIGF_A::_0
+        **self == TRIGF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TRIGF_A::_1
+        **self == TRIGF_A::_1
+    }
+}
+impl core::ops::Deref for TRIGF_R {
+    type Target = crate::FieldReader<bool, TRIGF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -648,5 +736,30 @@ impl W {
     #[inline(always)]
     pub fn inittrigen(&mut self) -> INITTRIGEN_W {
         INITTRIGEN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "FTM External Trigger\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [exttrig](index.html) module"]
+pub struct EXTTRIG_SPEC;
+impl crate::RegisterSpec for EXTTRIG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [exttrig::R](R) reader structure"]
+impl crate::Readable for EXTTRIG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [exttrig::W](W) writer structure"]
+impl crate::Writable for EXTTRIG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets EXTTRIG to value 0"]
+impl crate::Resettable for EXTTRIG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

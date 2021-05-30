@@ -1,13 +1,35 @@
-#[doc = "Reader of register SWOCTRL"]
-pub type R = crate::R<u32, super::SWOCTRL>;
-#[doc = "Writer for register SWOCTRL"]
-pub type W = crate::W<u32, super::SWOCTRL>;
-#[doc = "Register SWOCTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::SWOCTRL {
-    type Type = u32;
+#[doc = "Register `SWOCTRL` reader"]
+pub struct R(crate::R<SWOCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SWOCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SWOCTRL_SPEC>> for R {
+    fn from(reader: crate::R<SWOCTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SWOCTRL` writer"]
+pub struct W(crate::W<SWOCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SWOCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SWOCTRL_SPEC>> for W {
+    fn from(writer: crate::W<SWOCTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Channel 0 Software Output Control Enable\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<CH0OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH0OC`"]
-pub type CH0OC_R = crate::R<bool, CH0OC_A>;
+#[doc = "Field `CH0OC` reader - Channel 0 Software Output Control Enable"]
+pub struct CH0OC_R(crate::FieldReader<bool, CH0OC_A>);
 impl CH0OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0OC_A {
@@ -38,15 +63,22 @@ impl CH0OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH0OC_A::_0
+        **self == CH0OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH0OC_A::_1
+        **self == CH0OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH0OC`"]
+impl core::ops::Deref for CH0OC_R {
+    type Target = crate::FieldReader<bool, CH0OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH0OC` writer - Channel 0 Software Output Control Enable"]
 pub struct CH0OC_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> CH0OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH0OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> CH0OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<CH1OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH1OC`"]
-pub type CH1OC_R = crate::R<bool, CH1OC_A>;
+#[doc = "Field `CH1OC` reader - Channel 1 Software Output Control Enable"]
+pub struct CH1OC_R(crate::FieldReader<bool, CH1OC_A>);
 impl CH1OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1OC_A {
@@ -113,15 +146,22 @@ impl CH1OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH1OC_A::_0
+        **self == CH1OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH1OC_A::_1
+        **self == CH1OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH1OC`"]
+impl core::ops::Deref for CH1OC_R {
+    type Target = crate::FieldReader<bool, CH1OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1OC` writer - Channel 1 Software Output Control Enable"]
 pub struct CH1OC_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> CH1OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH1OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> CH1OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<CH2OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH2OC`"]
-pub type CH2OC_R = crate::R<bool, CH2OC_A>;
+#[doc = "Field `CH2OC` reader - Channel 2 Software Output Control Enable"]
+pub struct CH2OC_R(crate::FieldReader<bool, CH2OC_A>);
 impl CH2OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2OC_A {
@@ -188,15 +229,22 @@ impl CH2OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH2OC_A::_0
+        **self == CH2OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH2OC_A::_1
+        **self == CH2OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH2OC`"]
+impl core::ops::Deref for CH2OC_R {
+    type Target = crate::FieldReader<bool, CH2OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2OC` writer - Channel 2 Software Output Control Enable"]
 pub struct CH2OC_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> CH2OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH2OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> CH2OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<CH3OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH3OC`"]
-pub type CH3OC_R = crate::R<bool, CH3OC_A>;
+#[doc = "Field `CH3OC` reader - Channel 3 Software Output Control Enable"]
+pub struct CH3OC_R(crate::FieldReader<bool, CH3OC_A>);
 impl CH3OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3OC_A {
@@ -263,15 +312,22 @@ impl CH3OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH3OC_A::_0
+        **self == CH3OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH3OC_A::_1
+        **self == CH3OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH3OC`"]
+impl core::ops::Deref for CH3OC_R {
+    type Target = crate::FieldReader<bool, CH3OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3OC` writer - Channel 3 Software Output Control Enable"]
 pub struct CH3OC_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> CH3OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH3OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> CH3OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<CH4OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH4OC`"]
-pub type CH4OC_R = crate::R<bool, CH4OC_A>;
+#[doc = "Field `CH4OC` reader - Channel 4 Software Output Control Enable"]
+pub struct CH4OC_R(crate::FieldReader<bool, CH4OC_A>);
 impl CH4OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH4OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH4OC_A {
@@ -338,15 +395,22 @@ impl CH4OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH4OC_A::_0
+        **self == CH4OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH4OC_A::_1
+        **self == CH4OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH4OC`"]
+impl core::ops::Deref for CH4OC_R {
+    type Target = crate::FieldReader<bool, CH4OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH4OC` writer - Channel 4 Software Output Control Enable"]
 pub struct CH4OC_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> CH4OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH4OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> CH4OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<CH5OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH5OC`"]
-pub type CH5OC_R = crate::R<bool, CH5OC_A>;
+#[doc = "Field `CH5OC` reader - Channel 5 Software Output Control Enable"]
+pub struct CH5OC_R(crate::FieldReader<bool, CH5OC_A>);
 impl CH5OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH5OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH5OC_A {
@@ -413,15 +478,22 @@ impl CH5OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH5OC_A::_0
+        **self == CH5OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH5OC_A::_1
+        **self == CH5OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH5OC`"]
+impl core::ops::Deref for CH5OC_R {
+    type Target = crate::FieldReader<bool, CH5OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH5OC` writer - Channel 5 Software Output Control Enable"]
 pub struct CH5OC_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> CH5OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH5OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> CH5OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<CH6OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH6OC`"]
-pub type CH6OC_R = crate::R<bool, CH6OC_A>;
+#[doc = "Field `CH6OC` reader - Channel 6 Software Output Control Enable"]
+pub struct CH6OC_R(crate::FieldReader<bool, CH6OC_A>);
 impl CH6OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH6OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH6OC_A {
@@ -488,15 +561,22 @@ impl CH6OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH6OC_A::_0
+        **self == CH6OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH6OC_A::_1
+        **self == CH6OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH6OC`"]
+impl core::ops::Deref for CH6OC_R {
+    type Target = crate::FieldReader<bool, CH6OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH6OC` writer - Channel 6 Software Output Control Enable"]
 pub struct CH6OC_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> CH6OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH6OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> CH6OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<CH7OC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH7OC`"]
-pub type CH7OC_R = crate::R<bool, CH7OC_A>;
+#[doc = "Field `CH7OC` reader - Channel 7 Software Output Control Enable"]
+pub struct CH7OC_R(crate::FieldReader<bool, CH7OC_A>);
 impl CH7OC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH7OC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH7OC_A {
@@ -563,15 +644,22 @@ impl CH7OC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH7OC_A::_0
+        **self == CH7OC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH7OC_A::_1
+        **self == CH7OC_A::_1
     }
 }
-#[doc = "Write proxy for field `CH7OC`"]
+impl core::ops::Deref for CH7OC_R {
+    type Target = crate::FieldReader<bool, CH7OC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH7OC` writer - Channel 7 Software Output Control Enable"]
 pub struct CH7OC_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> CH7OC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH7OC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The channel output is not affected by software output control."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> CH7OC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<CH0OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH0OCV`"]
-pub type CH0OCV_R = crate::R<bool, CH0OCV_A>;
+#[doc = "Field `CH0OCV` reader - Channel 0 Software Output Control Value"]
+pub struct CH0OCV_R(crate::FieldReader<bool, CH0OCV_A>);
 impl CH0OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0OCV_A {
@@ -638,15 +727,22 @@ impl CH0OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH0OCV_A::_0
+        **self == CH0OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH0OCV_A::_1
+        **self == CH0OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH0OCV`"]
+impl core::ops::Deref for CH0OCV_R {
+    type Target = crate::FieldReader<bool, CH0OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH0OCV` writer - Channel 0 Software Output Control Value"]
 pub struct CH0OCV_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> CH0OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH0OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> CH0OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<CH1OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH1OCV`"]
-pub type CH1OCV_R = crate::R<bool, CH1OCV_A>;
+#[doc = "Field `CH1OCV` reader - Channel 1 Software Output Control Value"]
+pub struct CH1OCV_R(crate::FieldReader<bool, CH1OCV_A>);
 impl CH1OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1OCV_A {
@@ -713,15 +810,22 @@ impl CH1OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH1OCV_A::_0
+        **self == CH1OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH1OCV_A::_1
+        **self == CH1OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH1OCV`"]
+impl core::ops::Deref for CH1OCV_R {
+    type Target = crate::FieldReader<bool, CH1OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1OCV` writer - Channel 1 Software Output Control Value"]
 pub struct CH1OCV_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> CH1OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH1OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> CH1OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<CH2OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH2OCV`"]
-pub type CH2OCV_R = crate::R<bool, CH2OCV_A>;
+#[doc = "Field `CH2OCV` reader - Channel 2 Software Output Control Value"]
+pub struct CH2OCV_R(crate::FieldReader<bool, CH2OCV_A>);
 impl CH2OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2OCV_A {
@@ -788,15 +893,22 @@ impl CH2OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH2OCV_A::_0
+        **self == CH2OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH2OCV_A::_1
+        **self == CH2OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH2OCV`"]
+impl core::ops::Deref for CH2OCV_R {
+    type Target = crate::FieldReader<bool, CH2OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2OCV` writer - Channel 2 Software Output Control Value"]
 pub struct CH2OCV_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> CH2OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH2OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> CH2OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<CH3OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH3OCV`"]
-pub type CH3OCV_R = crate::R<bool, CH3OCV_A>;
+#[doc = "Field `CH3OCV` reader - Channel 3 Software Output Control Value"]
+pub struct CH3OCV_R(crate::FieldReader<bool, CH3OCV_A>);
 impl CH3OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3OCV_A {
@@ -863,15 +976,22 @@ impl CH3OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH3OCV_A::_0
+        **self == CH3OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH3OCV_A::_1
+        **self == CH3OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH3OCV`"]
+impl core::ops::Deref for CH3OCV_R {
+    type Target = crate::FieldReader<bool, CH3OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3OCV` writer - Channel 3 Software Output Control Value"]
 pub struct CH3OCV_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> CH3OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH3OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> CH3OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1042,12 @@ impl From<CH4OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH4OCV`"]
-pub type CH4OCV_R = crate::R<bool, CH4OCV_A>;
+#[doc = "Field `CH4OCV` reader - Channel 4 Software Output Control Value"]
+pub struct CH4OCV_R(crate::FieldReader<bool, CH4OCV_A>);
 impl CH4OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH4OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH4OCV_A {
@@ -938,15 +1059,22 @@ impl CH4OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH4OCV_A::_0
+        **self == CH4OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH4OCV_A::_1
+        **self == CH4OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH4OCV`"]
+impl core::ops::Deref for CH4OCV_R {
+    type Target = crate::FieldReader<bool, CH4OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH4OCV` writer - Channel 4 Software Output Control Value"]
 pub struct CH4OCV_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1082,7 @@ impl<'a> CH4OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH4OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -981,7 +1107,7 @@ impl<'a> CH4OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1125,12 @@ impl From<CH5OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH5OCV`"]
-pub type CH5OCV_R = crate::R<bool, CH5OCV_A>;
+#[doc = "Field `CH5OCV` reader - Channel 5 Software Output Control Value"]
+pub struct CH5OCV_R(crate::FieldReader<bool, CH5OCV_A>);
 impl CH5OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH5OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH5OCV_A {
@@ -1013,15 +1142,22 @@ impl CH5OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH5OCV_A::_0
+        **self == CH5OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH5OCV_A::_1
+        **self == CH5OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH5OCV`"]
+impl core::ops::Deref for CH5OCV_R {
+    type Target = crate::FieldReader<bool, CH5OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH5OCV` writer - Channel 5 Software Output Control Value"]
 pub struct CH5OCV_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1165,7 @@ impl<'a> CH5OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH5OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -1056,7 +1190,7 @@ impl<'a> CH5OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1208,12 @@ impl From<CH6OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH6OCV`"]
-pub type CH6OCV_R = crate::R<bool, CH6OCV_A>;
+#[doc = "Field `CH6OCV` reader - Channel 6 Software Output Control Value"]
+pub struct CH6OCV_R(crate::FieldReader<bool, CH6OCV_A>);
 impl CH6OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH6OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH6OCV_A {
@@ -1088,15 +1225,22 @@ impl CH6OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH6OCV_A::_0
+        **self == CH6OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH6OCV_A::_1
+        **self == CH6OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH6OCV`"]
+impl core::ops::Deref for CH6OCV_R {
+    type Target = crate::FieldReader<bool, CH6OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH6OCV` writer - Channel 6 Software Output Control Value"]
 pub struct CH6OCV_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1248,7 @@ impl<'a> CH6OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH6OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -1131,7 +1273,7 @@ impl<'a> CH6OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1291,12 @@ impl From<CH7OCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH7OCV`"]
-pub type CH7OCV_R = crate::R<bool, CH7OCV_A>;
+#[doc = "Field `CH7OCV` reader - Channel 7 Software Output Control Value"]
+pub struct CH7OCV_R(crate::FieldReader<bool, CH7OCV_A>);
 impl CH7OCV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH7OCV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH7OCV_A {
@@ -1163,15 +1308,22 @@ impl CH7OCV_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH7OCV_A::_0
+        **self == CH7OCV_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH7OCV_A::_1
+        **self == CH7OCV_A::_1
     }
 }
-#[doc = "Write proxy for field `CH7OCV`"]
+impl core::ops::Deref for CH7OCV_R {
+    type Target = crate::FieldReader<bool, CH7OCV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH7OCV` writer - Channel 7 Software Output Control Value"]
 pub struct CH7OCV_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1331,7 @@ impl<'a> CH7OCV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH7OCV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The software output control forces 0 to the channel output."]
     #[inline(always)]
@@ -1206,7 +1356,7 @@ impl<'a> CH7OCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1372,5 +1522,30 @@ impl W {
     #[inline(always)]
     pub fn ch7ocv(&mut self) -> CH7OCV_W {
         CH7OCV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "FTM Software Output Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [swoctrl](index.html) module"]
+pub struct SWOCTRL_SPEC;
+impl crate::RegisterSpec for SWOCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [swoctrl::R](R) reader structure"]
+impl crate::Readable for SWOCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [swoctrl::W](W) writer structure"]
+impl crate::Writable for SWOCTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SWOCTRL to value 0"]
+impl crate::Resettable for SWOCTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

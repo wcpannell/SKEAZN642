@@ -1,18 +1,52 @@
-#[doc = "Reader of register FPROT"]
-pub type R = crate::R<u8, super::FPROT>;
-#[doc = "Writer for register FPROT"]
-pub type W = crate::W<u8, super::FPROT>;
-#[doc = "Register FPROT `reset()`'s with value 0"]
-impl crate::ResetValue for super::FPROT {
-    type Type = u8;
+#[doc = "Register `FPROT` reader"]
+pub struct R(crate::R<FPROT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FPROT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FPLS`"]
-pub type FPLS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FPLS`"]
+impl core::convert::From<crate::R<FPROT_SPEC>> for R {
+    fn from(reader: crate::R<FPROT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FPROT` writer"]
+pub struct W(crate::W<FPROT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FPROT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<FPROT_SPEC>> for W {
+    fn from(writer: crate::W<FPROT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FPLS` reader - Flash Protection Lower Address Size"]
+pub struct FPLS_R(crate::FieldReader<u8, u8>);
+impl FPLS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FPLS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FPLS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPLS` writer - Flash Protection Lower Address Size"]
 pub struct FPLS_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> FPLS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u8) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u8 & 0x03);
         self.w
     }
 }
@@ -38,9 +72,12 @@ impl From<FPLDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FPLDIS`"]
-pub type FPLDIS_R = crate::R<bool, FPLDIS_A>;
+#[doc = "Field `FPLDIS` reader - Flash Protection Lower Address Range Disable"]
+pub struct FPLDIS_R(crate::FieldReader<bool, FPLDIS_A>);
 impl FPLDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FPLDIS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FPLDIS_A {
@@ -52,15 +89,22 @@ impl FPLDIS_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FPLDIS_A::_0
+        **self == FPLDIS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FPLDIS_A::_1
+        **self == FPLDIS_A::_1
     }
 }
-#[doc = "Write proxy for field `FPLDIS`"]
+impl core::ops::Deref for FPLDIS_R {
+    type Target = crate::FieldReader<bool, FPLDIS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPLDIS` writer - Flash Protection Lower Address Range Disable"]
 pub struct FPLDIS_W<'a> {
     w: &'a mut W,
 }
@@ -68,9 +112,7 @@ impl<'a> FPLDIS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FPLDIS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Protection/Unprotection enabled."]
     #[inline(always)]
@@ -95,13 +137,25 @@ impl<'a> FPLDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `FPHS`"]
-pub type FPHS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FPHS`"]
+#[doc = "Field `FPHS` reader - Flash Protection Higher Address Size"]
+pub struct FPHS_R(crate::FieldReader<u8, u8>);
+impl FPHS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FPHS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FPHS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPHS` writer - Flash Protection Higher Address Size"]
 pub struct FPHS_W<'a> {
     w: &'a mut W,
 }
@@ -109,7 +163,7 @@ impl<'a> FPHS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 3)) | (((value as u8) & 0x03) << 3);
+        self.w.bits = (self.w.bits & !(0x03 << 3)) | ((value as u8 & 0x03) << 3);
         self.w
     }
 }
@@ -127,9 +181,12 @@ impl From<FPHDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FPHDIS`"]
-pub type FPHDIS_R = crate::R<bool, FPHDIS_A>;
+#[doc = "Field `FPHDIS` reader - Flash Protection Higher Address Range Disable"]
+pub struct FPHDIS_R(crate::FieldReader<bool, FPHDIS_A>);
 impl FPHDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FPHDIS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FPHDIS_A {
@@ -141,15 +198,22 @@ impl FPHDIS_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FPHDIS_A::_0
+        **self == FPHDIS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FPHDIS_A::_1
+        **self == FPHDIS_A::_1
     }
 }
-#[doc = "Write proxy for field `FPHDIS`"]
+impl core::ops::Deref for FPHDIS_R {
+    type Target = crate::FieldReader<bool, FPHDIS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPHDIS` writer - Flash Protection Higher Address Range Disable"]
 pub struct FPHDIS_W<'a> {
     w: &'a mut W,
 }
@@ -157,9 +221,7 @@ impl<'a> FPHDIS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FPHDIS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Protection/Unprotection enabled."]
     #[inline(always)]
@@ -184,12 +246,24 @@ impl<'a> FPHDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u8) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `RNV6`"]
-pub type RNV6_R = crate::R<bool, bool>;
+#[doc = "Field `RNV6` reader - Reserved Nonvolatile Bit"]
+pub struct RNV6_R(crate::FieldReader<bool, bool>);
+impl RNV6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RNV6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RNV6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Flash Protection Operation Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FPOPEN_A {
@@ -204,9 +278,12 @@ impl From<FPOPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FPOPEN`"]
-pub type FPOPEN_R = crate::R<bool, FPOPEN_A>;
+#[doc = "Field `FPOPEN` reader - Flash Protection Operation Enable"]
+pub struct FPOPEN_R(crate::FieldReader<bool, FPOPEN_A>);
 impl FPOPEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FPOPEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FPOPEN_A {
@@ -218,15 +295,22 @@ impl FPOPEN_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FPOPEN_A::_0
+        **self == FPOPEN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FPOPEN_A::_1
+        **self == FPOPEN_A::_1
     }
 }
-#[doc = "Write proxy for field `FPOPEN`"]
+impl core::ops::Deref for FPOPEN_R {
+    type Target = crate::FieldReader<bool, FPOPEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPOPEN` writer - Flash Protection Operation Enable"]
 pub struct FPOPEN_W<'a> {
     w: &'a mut W,
 }
@@ -234,9 +318,7 @@ impl<'a> FPOPEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FPOPEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "When FPOPEN is clear, the FPHDIS and FPLDIS fields define unprotected address ranges as specified by the corresponding FPHS and FPLS fields."]
     #[inline(always)]
@@ -261,7 +343,7 @@ impl<'a> FPOPEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u8) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
         self.w
     }
 }
@@ -322,5 +404,30 @@ impl W {
     #[inline(always)]
     pub fn fpopen(&mut self) -> FPOPEN_W {
         FPOPEN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Flash Protection Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fprot](index.html) module"]
+pub struct FPROT_SPEC;
+impl crate::RegisterSpec for FPROT_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [fprot::R](R) reader structure"]
+impl crate::Readable for FPROT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [fprot::W](W) writer structure"]
+impl crate::Writable for FPROT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FPROT to value 0"]
+impl crate::Resettable for FPROT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

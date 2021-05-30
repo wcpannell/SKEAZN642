@@ -1,13 +1,35 @@
-#[doc = "Reader of register SYNC"]
-pub type R = crate::R<u32, super::SYNC>;
-#[doc = "Writer for register SYNC"]
-pub type W = crate::W<u32, super::SYNC>;
-#[doc = "Register SYNC `reset()`'s with value 0"]
-impl crate::ResetValue for super::SYNC {
-    type Type = u32;
+#[doc = "Register `SYNC` reader"]
+pub struct R(crate::R<SYNC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYNC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SYNC_SPEC>> for R {
+    fn from(reader: crate::R<SYNC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYNC` writer"]
+pub struct W(crate::W<SYNC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYNC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SYNC_SPEC>> for W {
+    fn from(writer: crate::W<SYNC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Minimum Loading Point Enable\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<CNTMIN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CNTMIN`"]
-pub type CNTMIN_R = crate::R<bool, CNTMIN_A>;
+#[doc = "Field `CNTMIN` reader - Minimum Loading Point Enable"]
+pub struct CNTMIN_R(crate::FieldReader<bool, CNTMIN_A>);
 impl CNTMIN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CNTMIN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CNTMIN_A {
@@ -38,15 +63,22 @@ impl CNTMIN_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CNTMIN_A::_0
+        **self == CNTMIN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CNTMIN_A::_1
+        **self == CNTMIN_A::_1
     }
 }
-#[doc = "Write proxy for field `CNTMIN`"]
+impl core::ops::Deref for CNTMIN_R {
+    type Target = crate::FieldReader<bool, CNTMIN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CNTMIN` writer - Minimum Loading Point Enable"]
 pub struct CNTMIN_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> CNTMIN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CNTMIN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The minimum loading point is disabled."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> CNTMIN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<CNTMAX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CNTMAX`"]
-pub type CNTMAX_R = crate::R<bool, CNTMAX_A>;
+#[doc = "Field `CNTMAX` reader - Maximum Loading Point Enable"]
+pub struct CNTMAX_R(crate::FieldReader<bool, CNTMAX_A>);
 impl CNTMAX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CNTMAX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CNTMAX_A {
@@ -113,15 +146,22 @@ impl CNTMAX_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CNTMAX_A::_0
+        **self == CNTMAX_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CNTMAX_A::_1
+        **self == CNTMAX_A::_1
     }
 }
-#[doc = "Write proxy for field `CNTMAX`"]
+impl core::ops::Deref for CNTMAX_R {
+    type Target = crate::FieldReader<bool, CNTMAX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CNTMAX` writer - Maximum Loading Point Enable"]
 pub struct CNTMAX_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> CNTMAX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CNTMAX_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The maximum loading point is disabled."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> CNTMAX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<REINIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REINIT`"]
-pub type REINIT_R = crate::R<bool, REINIT_A>;
+#[doc = "Field `REINIT` reader - FTM Counter Reinitialization By Synchronization (FTM counter synchronization)"]
+pub struct REINIT_R(crate::FieldReader<bool, REINIT_A>);
 impl REINIT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REINIT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REINIT_A {
@@ -188,15 +229,22 @@ impl REINIT_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == REINIT_A::_0
+        **self == REINIT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == REINIT_A::_1
+        **self == REINIT_A::_1
     }
 }
-#[doc = "Write proxy for field `REINIT`"]
+impl core::ops::Deref for REINIT_R {
+    type Target = crate::FieldReader<bool, REINIT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REINIT` writer - FTM Counter Reinitialization By Synchronization (FTM counter synchronization)"]
 pub struct REINIT_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> REINIT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REINIT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "FTM counter continues to count normally."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> REINIT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<SYNCHOM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYNCHOM`"]
-pub type SYNCHOM_R = crate::R<bool, SYNCHOM_A>;
+#[doc = "Field `SYNCHOM` reader - Output Mask Synchronization"]
+pub struct SYNCHOM_R(crate::FieldReader<bool, SYNCHOM_A>);
 impl SYNCHOM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SYNCHOM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNCHOM_A {
@@ -263,15 +312,22 @@ impl SYNCHOM_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SYNCHOM_A::_0
+        **self == SYNCHOM_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SYNCHOM_A::_1
+        **self == SYNCHOM_A::_1
     }
 }
-#[doc = "Write proxy for field `SYNCHOM`"]
+impl core::ops::Deref for SYNCHOM_R {
+    type Target = crate::FieldReader<bool, SYNCHOM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SYNCHOM` writer - Output Mask Synchronization"]
 pub struct SYNCHOM_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> SYNCHOM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SYNCHOM_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "OUTMASK register is updated with the value of its buffer in all rising edges of the system clock."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> SYNCHOM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<TRIG0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TRIG0`"]
-pub type TRIG0_R = crate::R<bool, TRIG0_A>;
+#[doc = "Field `TRIG0` reader - PWM Synchronization Hardware Trigger 0"]
+pub struct TRIG0_R(crate::FieldReader<bool, TRIG0_A>);
 impl TRIG0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TRIG0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIG0_A {
@@ -338,15 +395,22 @@ impl TRIG0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TRIG0_A::_0
+        **self == TRIG0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TRIG0_A::_1
+        **self == TRIG0_A::_1
     }
 }
-#[doc = "Write proxy for field `TRIG0`"]
+impl core::ops::Deref for TRIG0_R {
+    type Target = crate::FieldReader<bool, TRIG0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TRIG0` writer - PWM Synchronization Hardware Trigger 0"]
 pub struct TRIG0_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> TRIG0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TRIG0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trigger is disabled."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> TRIG0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<TRIG1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TRIG1`"]
-pub type TRIG1_R = crate::R<bool, TRIG1_A>;
+#[doc = "Field `TRIG1` reader - PWM Synchronization Hardware Trigger 1"]
+pub struct TRIG1_R(crate::FieldReader<bool, TRIG1_A>);
 impl TRIG1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TRIG1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIG1_A {
@@ -413,15 +478,22 @@ impl TRIG1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TRIG1_A::_0
+        **self == TRIG1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TRIG1_A::_1
+        **self == TRIG1_A::_1
     }
 }
-#[doc = "Write proxy for field `TRIG1`"]
+impl core::ops::Deref for TRIG1_R {
+    type Target = crate::FieldReader<bool, TRIG1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TRIG1` writer - PWM Synchronization Hardware Trigger 1"]
 pub struct TRIG1_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> TRIG1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TRIG1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trigger is disabled."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> TRIG1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<TRIG2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TRIG2`"]
-pub type TRIG2_R = crate::R<bool, TRIG2_A>;
+#[doc = "Field `TRIG2` reader - PWM Synchronization Hardware Trigger 2"]
+pub struct TRIG2_R(crate::FieldReader<bool, TRIG2_A>);
 impl TRIG2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TRIG2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIG2_A {
@@ -488,15 +561,22 @@ impl TRIG2_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TRIG2_A::_0
+        **self == TRIG2_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TRIG2_A::_1
+        **self == TRIG2_A::_1
     }
 }
-#[doc = "Write proxy for field `TRIG2`"]
+impl core::ops::Deref for TRIG2_R {
+    type Target = crate::FieldReader<bool, TRIG2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TRIG2` writer - PWM Synchronization Hardware Trigger 2"]
 pub struct TRIG2_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> TRIG2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TRIG2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trigger is disabled."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> TRIG2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<SWSYNC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SWSYNC`"]
-pub type SWSYNC_R = crate::R<bool, SWSYNC_A>;
+#[doc = "Field `SWSYNC` reader - PWM Synchronization Software Trigger"]
+pub struct SWSYNC_R(crate::FieldReader<bool, SWSYNC_A>);
 impl SWSYNC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SWSYNC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SWSYNC_A {
@@ -563,15 +644,22 @@ impl SWSYNC_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SWSYNC_A::_0
+        **self == SWSYNC_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SWSYNC_A::_1
+        **self == SWSYNC_A::_1
     }
 }
-#[doc = "Write proxy for field `SWSYNC`"]
+impl core::ops::Deref for SWSYNC_R {
+    type Target = crate::FieldReader<bool, SWSYNC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SWSYNC` writer - PWM Synchronization Software Trigger"]
 pub struct SWSYNC_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> SWSYNC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SWSYNC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Software trigger is not selected."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> SWSYNC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -692,5 +778,30 @@ impl W {
     #[inline(always)]
     pub fn swsync(&mut self) -> SWSYNC_W {
         SWSYNC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Synchronization\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sync](index.html) module"]
+pub struct SYNC_SPEC;
+impl crate::RegisterSpec for SYNC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sync::R](R) reader structure"]
+impl crate::Readable for SYNC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sync::W](W) writer structure"]
+impl crate::Writable for SYNC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYNC to value 0"]
+impl crate::Resettable for SYNC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

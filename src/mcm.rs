@@ -3,38 +3,21 @@
 pub struct RegisterBlock {
     _reserved0: [u8; 8usize],
     #[doc = "0x08 - Crossbar Switch (AXBS) Slave Configuration"]
-    pub plasc: PLASC,
+    pub plasc: crate::Reg<plasc::PLASC_SPEC>,
     #[doc = "0x0a - Crossbar Switch (AXBS) Master Configuration"]
-    pub plamc: PLAMC,
+    pub plamc: crate::Reg<plamc::PLAMC_SPEC>,
     #[doc = "0x0c - Platform Control Register"]
-    pub placr: PLACR,
+    pub placr: crate::Reg<placr::PLACR_SPEC>,
 }
-#[doc = "Crossbar Switch (AXBS) Slave Configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [plasc](plasc) module"]
-pub type PLASC = crate::Reg<u16, _PLASC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PLASC;
-#[doc = "`read()` method returns [plasc::R](plasc::R) reader structure"]
-impl crate::Readable for PLASC {}
+#[doc = "PLASC register accessor: an alias for `Reg<PLASC_SPEC>`"]
+pub type PLASC = crate::Reg<plasc::PLASC_SPEC>;
 #[doc = "Crossbar Switch (AXBS) Slave Configuration"]
 pub mod plasc;
-#[doc = "Crossbar Switch (AXBS) Master Configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [plamc](plamc) module"]
-pub type PLAMC = crate::Reg<u16, _PLAMC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PLAMC;
-#[doc = "`read()` method returns [plamc::R](plamc::R) reader structure"]
-impl crate::Readable for PLAMC {}
+#[doc = "PLAMC register accessor: an alias for `Reg<PLAMC_SPEC>`"]
+pub type PLAMC = crate::Reg<plamc::PLAMC_SPEC>;
 #[doc = "Crossbar Switch (AXBS) Master Configuration"]
 pub mod plamc;
-#[doc = "Platform Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [placr](placr) module"]
-pub type PLACR = crate::Reg<u32, _PLACR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PLACR;
-#[doc = "`read()` method returns [placr::R](placr::R) reader structure"]
-impl crate::Readable for PLACR {}
-#[doc = "`write(|w| ..)` method takes [placr::W](placr::W) writer structure"]
-impl crate::Writable for PLACR {}
+#[doc = "PLACR register accessor: an alias for `Reg<PLACR_SPEC>`"]
+pub type PLACR = crate::Reg<placr::PLACR_SPEC>;
 #[doc = "Platform Control Register"]
 pub mod placr;

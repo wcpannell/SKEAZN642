@@ -1,13 +1,35 @@
-#[doc = "Reader of register C2"]
-pub type R = crate::R<u8, super::C2>;
-#[doc = "Writer for register C2"]
-pub type W = crate::W<u8, super::C2>;
-#[doc = "Register C2 `reset()`'s with value 0x20"]
-impl crate::ResetValue for super::C2 {
-    type Type = u8;
+#[doc = "Register `C2` reader"]
+pub struct R(crate::R<C2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<C2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x20
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<C2_SPEC>> for R {
+    fn from(reader: crate::R<C2_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `C2` writer"]
+pub struct W(crate::W<C2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<C2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<C2_SPEC>> for W {
+    fn from(writer: crate::W<C2_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Low Power Select\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<LP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LP`"]
-pub type LP_R = crate::R<bool, LP_A>;
+#[doc = "Field `LP` reader - Low Power Select"]
+pub struct LP_R(crate::FieldReader<bool, LP_A>);
 impl LP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP_A {
@@ -38,15 +63,22 @@ impl LP_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == LP_A::_0
+        **self == LP_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == LP_A::_1
+        **self == LP_A::_1
     }
 }
-#[doc = "Write proxy for field `LP`"]
+impl core::ops::Deref for LP_R {
+    type Target = crate::FieldReader<bool, LP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LP` writer - Low Power Select"]
 pub struct LP_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> LP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "FLL is not disabled in bypass mode."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> LP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u8) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
         self.w
     }
 }
@@ -112,9 +142,12 @@ impl From<BDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BDIV`"]
-pub type BDIV_R = crate::R<u8, BDIV_A>;
+#[doc = "Field `BDIV` reader - Bus Frequency Divider"]
+pub struct BDIV_R(crate::FieldReader<u8, BDIV_A>);
 impl BDIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BDIV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BDIV_A {
@@ -133,45 +166,52 @@ impl BDIV_R {
     #[doc = "Checks if the value of the field is `_000`"]
     #[inline(always)]
     pub fn is_000(&self) -> bool {
-        *self == BDIV_A::_000
+        **self == BDIV_A::_000
     }
     #[doc = "Checks if the value of the field is `_001`"]
     #[inline(always)]
     pub fn is_001(&self) -> bool {
-        *self == BDIV_A::_001
+        **self == BDIV_A::_001
     }
     #[doc = "Checks if the value of the field is `_010`"]
     #[inline(always)]
     pub fn is_010(&self) -> bool {
-        *self == BDIV_A::_010
+        **self == BDIV_A::_010
     }
     #[doc = "Checks if the value of the field is `_011`"]
     #[inline(always)]
     pub fn is_011(&self) -> bool {
-        *self == BDIV_A::_011
+        **self == BDIV_A::_011
     }
     #[doc = "Checks if the value of the field is `_100`"]
     #[inline(always)]
     pub fn is_100(&self) -> bool {
-        *self == BDIV_A::_100
+        **self == BDIV_A::_100
     }
     #[doc = "Checks if the value of the field is `_101`"]
     #[inline(always)]
     pub fn is_101(&self) -> bool {
-        *self == BDIV_A::_101
+        **self == BDIV_A::_101
     }
     #[doc = "Checks if the value of the field is `_110`"]
     #[inline(always)]
     pub fn is_110(&self) -> bool {
-        *self == BDIV_A::_110
+        **self == BDIV_A::_110
     }
     #[doc = "Checks if the value of the field is `_111`"]
     #[inline(always)]
     pub fn is_111(&self) -> bool {
-        *self == BDIV_A::_111
+        **self == BDIV_A::_111
     }
 }
-#[doc = "Write proxy for field `BDIV`"]
+impl core::ops::Deref for BDIV_R {
+    type Target = crate::FieldReader<u8, BDIV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BDIV` writer - Bus Frequency Divider"]
 pub struct BDIV_W<'a> {
     w: &'a mut W,
 }
@@ -179,9 +219,7 @@ impl<'a> BDIV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BDIV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Encoding 0-Divides the selected clock by 1."]
     #[inline(always)]
@@ -226,7 +264,7 @@ impl<'a> BDIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u8) & 0x07) << 5);
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | ((value as u8 & 0x07) << 5);
         self.w
     }
 }
@@ -252,5 +290,30 @@ impl W {
     #[inline(always)]
     pub fn bdiv(&mut self) -> BDIV_W {
         BDIV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ICS Control Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c2](index.html) module"]
+pub struct C2_SPEC;
+impl crate::RegisterSpec for C2_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [c2::R](R) reader structure"]
+impl crate::Readable for C2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [c2::W](W) writer structure"]
+impl crate::Writable for C2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets C2 to value 0x20"]
+impl crate::Resettable for C2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x20
     }
 }

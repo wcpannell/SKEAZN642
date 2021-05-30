@@ -1,13 +1,35 @@
-#[doc = "Reader of register MCR"]
-pub type R = crate::R<u32, super::MCR>;
-#[doc = "Writer for register MCR"]
-pub type W = crate::W<u32, super::MCR>;
-#[doc = "Register MCR `reset()`'s with value 0x06"]
-impl crate::ResetValue for super::MCR {
-    type Type = u32;
+#[doc = "Register `MCR` reader"]
+pub struct R(crate::R<MCR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MCR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x06
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<MCR_SPEC>> for R {
+    fn from(reader: crate::R<MCR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MCR` writer"]
+pub struct W(crate::W<MCR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MCR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<MCR_SPEC>> for W {
+    fn from(writer: crate::W<MCR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Freeze\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<FRZ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FRZ`"]
-pub type FRZ_R = crate::R<bool, FRZ_A>;
+#[doc = "Field `FRZ` reader - Freeze"]
+pub struct FRZ_R(crate::FieldReader<bool, FRZ_A>);
 impl FRZ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FRZ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FRZ_A {
@@ -38,15 +63,22 @@ impl FRZ_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FRZ_A::_0
+        **self == FRZ_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == FRZ_A::_1
+        **self == FRZ_A::_1
     }
 }
-#[doc = "Write proxy for field `FRZ`"]
+impl core::ops::Deref for FRZ_R {
+    type Target = crate::FieldReader<bool, FRZ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FRZ` writer - Freeze"]
 pub struct FRZ_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> FRZ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FRZ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Timers continue to run in Debug mode."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> FRZ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<MDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MDIS`"]
-pub type MDIS_R = crate::R<bool, MDIS_A>;
+#[doc = "Field `MDIS` reader - Module Disable - (PIT section)"]
+pub struct MDIS_R(crate::FieldReader<bool, MDIS_A>);
 impl MDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MDIS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MDIS_A {
@@ -113,15 +146,22 @@ impl MDIS_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == MDIS_A::_0
+        **self == MDIS_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == MDIS_A::_1
+        **self == MDIS_A::_1
     }
 }
-#[doc = "Write proxy for field `MDIS`"]
+impl core::ops::Deref for MDIS_R {
+    type Target = crate::FieldReader<bool, MDIS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MDIS` writer - Module Disable - (PIT section)"]
 pub struct MDIS_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> MDIS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MDIS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Clock for standard PIT timers is enabled."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> MDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -182,5 +220,30 @@ impl W {
     #[inline(always)]
     pub fn mdis(&mut self) -> MDIS_W {
         MDIS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PIT Module Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcr](index.html) module"]
+pub struct MCR_SPEC;
+impl crate::RegisterSpec for MCR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mcr::R](R) reader structure"]
+impl crate::Readable for MCR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mcr::W](W) writer structure"]
+impl crate::Writable for MCR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MCR to value 0x06"]
+impl crate::Resettable for MCR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x06
     }
 }

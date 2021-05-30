@@ -1,13 +1,35 @@
-#[doc = "Reader of register PUEL"]
-pub type R = crate::R<u32, super::PUEL>;
-#[doc = "Writer for register PUEL"]
-pub type W = crate::W<u32, super::PUEL>;
-#[doc = "Register PUEL `reset()`'s with value 0x0010_0000"]
-impl crate::ResetValue for super::PUEL {
-    type Type = u32;
+#[doc = "Register `PUEL` reader"]
+pub struct R(crate::R<PUEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PUEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0010_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PUEL_SPEC>> for R {
+    fn from(reader: crate::R<PUEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PUEL` writer"]
+pub struct W(crate::W<PUEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PUEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PUEL_SPEC>> for W {
+    fn from(writer: crate::W<PUEL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Pull Enable for Port A Bit 0\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<PTAPE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE0`"]
-pub type PTAPE0_R = crate::R<bool, PTAPE0_A>;
+#[doc = "Field `PTAPE0` reader - Pull Enable for Port A Bit 0"]
+pub struct PTAPE0_R(crate::FieldReader<bool, PTAPE0_A>);
 impl PTAPE0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE0_A {
@@ -38,15 +63,22 @@ impl PTAPE0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE0_A::_0
+        **self == PTAPE0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE0_A::_1
+        **self == PTAPE0_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE0`"]
+impl core::ops::Deref for PTAPE0_R {
+    type Target = crate::FieldReader<bool, PTAPE0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE0` writer - Pull Enable for Port A Bit 0"]
 pub struct PTAPE0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> PTAPE0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 0."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> PTAPE0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<PTAPE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE1`"]
-pub type PTAPE1_R = crate::R<bool, PTAPE1_A>;
+#[doc = "Field `PTAPE1` reader - Pull Enable for Port A Bit 1"]
+pub struct PTAPE1_R(crate::FieldReader<bool, PTAPE1_A>);
 impl PTAPE1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE1_A {
@@ -113,15 +146,22 @@ impl PTAPE1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE1_A::_0
+        **self == PTAPE1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE1_A::_1
+        **self == PTAPE1_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE1`"]
+impl core::ops::Deref for PTAPE1_R {
+    type Target = crate::FieldReader<bool, PTAPE1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE1` writer - Pull Enable for Port A Bit 1"]
 pub struct PTAPE1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> PTAPE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 1."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> PTAPE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<PTAPE2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE2`"]
-pub type PTAPE2_R = crate::R<bool, PTAPE2_A>;
+#[doc = "Field `PTAPE2` reader - Pull Enable for Port A Bit 2"]
+pub struct PTAPE2_R(crate::FieldReader<bool, PTAPE2_A>);
 impl PTAPE2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE2_A {
@@ -188,15 +229,22 @@ impl PTAPE2_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE2_A::_0
+        **self == PTAPE2_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE2_A::_1
+        **self == PTAPE2_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE2`"]
+impl core::ops::Deref for PTAPE2_R {
+    type Target = crate::FieldReader<bool, PTAPE2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE2` writer - Pull Enable for Port A Bit 2"]
 pub struct PTAPE2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> PTAPE2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 2."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> PTAPE2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<PTAPE3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE3`"]
-pub type PTAPE3_R = crate::R<bool, PTAPE3_A>;
+#[doc = "Field `PTAPE3` reader - Pull Enable for Port A Bit 3"]
+pub struct PTAPE3_R(crate::FieldReader<bool, PTAPE3_A>);
 impl PTAPE3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE3_A {
@@ -263,15 +312,22 @@ impl PTAPE3_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE3_A::_0
+        **self == PTAPE3_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE3_A::_1
+        **self == PTAPE3_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE3`"]
+impl core::ops::Deref for PTAPE3_R {
+    type Target = crate::FieldReader<bool, PTAPE3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE3` writer - Pull Enable for Port A Bit 3"]
 pub struct PTAPE3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> PTAPE3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 3."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> PTAPE3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<PTAPE4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE4`"]
-pub type PTAPE4_R = crate::R<bool, PTAPE4_A>;
+#[doc = "Field `PTAPE4` reader - Pull Enable for Port A Bit 4"]
+pub struct PTAPE4_R(crate::FieldReader<bool, PTAPE4_A>);
 impl PTAPE4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE4_A {
@@ -338,15 +395,22 @@ impl PTAPE4_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE4_A::_0
+        **self == PTAPE4_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE4_A::_1
+        **self == PTAPE4_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE4`"]
+impl core::ops::Deref for PTAPE4_R {
+    type Target = crate::FieldReader<bool, PTAPE4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE4` writer - Pull Enable for Port A Bit 4"]
 pub struct PTAPE4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> PTAPE4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 4."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> PTAPE4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<PTAPE5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE5`"]
-pub type PTAPE5_R = crate::R<bool, PTAPE5_A>;
+#[doc = "Field `PTAPE5` reader - Pull Enable for Port A Bit 5"]
+pub struct PTAPE5_R(crate::FieldReader<bool, PTAPE5_A>);
 impl PTAPE5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE5_A {
@@ -413,15 +478,22 @@ impl PTAPE5_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE5_A::_0
+        **self == PTAPE5_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE5_A::_1
+        **self == PTAPE5_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE5`"]
+impl core::ops::Deref for PTAPE5_R {
+    type Target = crate::FieldReader<bool, PTAPE5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE5` writer - Pull Enable for Port A Bit 5"]
 pub struct PTAPE5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> PTAPE5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 5."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> PTAPE5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<PTAPE6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE6`"]
-pub type PTAPE6_R = crate::R<bool, PTAPE6_A>;
+#[doc = "Field `PTAPE6` reader - Pull Enable for Port A Bit 6"]
+pub struct PTAPE6_R(crate::FieldReader<bool, PTAPE6_A>);
 impl PTAPE6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE6_A {
@@ -488,15 +561,22 @@ impl PTAPE6_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE6_A::_0
+        **self == PTAPE6_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE6_A::_1
+        **self == PTAPE6_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE6`"]
+impl core::ops::Deref for PTAPE6_R {
+    type Target = crate::FieldReader<bool, PTAPE6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE6` writer - Pull Enable for Port A Bit 6"]
 pub struct PTAPE6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> PTAPE6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 6."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> PTAPE6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<PTAPE7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTAPE7`"]
-pub type PTAPE7_R = crate::R<bool, PTAPE7_A>;
+#[doc = "Field `PTAPE7` reader - Pull Enable for Port A Bit 7"]
+pub struct PTAPE7_R(crate::FieldReader<bool, PTAPE7_A>);
 impl PTAPE7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTAPE7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTAPE7_A {
@@ -563,15 +644,22 @@ impl PTAPE7_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTAPE7_A::_0
+        **self == PTAPE7_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTAPE7_A::_1
+        **self == PTAPE7_A::_1
     }
 }
-#[doc = "Write proxy for field `PTAPE7`"]
+impl core::ops::Deref for PTAPE7_R {
+    type Target = crate::FieldReader<bool, PTAPE7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTAPE7` writer - Pull Enable for Port A Bit 7"]
 pub struct PTAPE7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> PTAPE7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTAPE7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port A bit 7."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> PTAPE7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<PTBPE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE0`"]
-pub type PTBPE0_R = crate::R<bool, PTBPE0_A>;
+#[doc = "Field `PTBPE0` reader - Pull Enable for Port B Bit 0"]
+pub struct PTBPE0_R(crate::FieldReader<bool, PTBPE0_A>);
 impl PTBPE0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE0_A {
@@ -638,15 +727,22 @@ impl PTBPE0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE0_A::_0
+        **self == PTBPE0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE0_A::_1
+        **self == PTBPE0_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE0`"]
+impl core::ops::Deref for PTBPE0_R {
+    type Target = crate::FieldReader<bool, PTBPE0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE0` writer - Pull Enable for Port B Bit 0"]
 pub struct PTBPE0_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> PTBPE0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 0."]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> PTBPE0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<PTBPE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE1`"]
-pub type PTBPE1_R = crate::R<bool, PTBPE1_A>;
+#[doc = "Field `PTBPE1` reader - Pull Enable for Port B Bit 1"]
+pub struct PTBPE1_R(crate::FieldReader<bool, PTBPE1_A>);
 impl PTBPE1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE1_A {
@@ -713,15 +810,22 @@ impl PTBPE1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE1_A::_0
+        **self == PTBPE1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE1_A::_1
+        **self == PTBPE1_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE1`"]
+impl core::ops::Deref for PTBPE1_R {
+    type Target = crate::FieldReader<bool, PTBPE1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE1` writer - Pull Enable for Port B Bit 1"]
 pub struct PTBPE1_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> PTBPE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 1."]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> PTBPE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<PTBPE2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE2`"]
-pub type PTBPE2_R = crate::R<bool, PTBPE2_A>;
+#[doc = "Field `PTBPE2` reader - Pull Enable for Port B Bit 2"]
+pub struct PTBPE2_R(crate::FieldReader<bool, PTBPE2_A>);
 impl PTBPE2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE2_A {
@@ -788,15 +893,22 @@ impl PTBPE2_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE2_A::_0
+        **self == PTBPE2_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE2_A::_1
+        **self == PTBPE2_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE2`"]
+impl core::ops::Deref for PTBPE2_R {
+    type Target = crate::FieldReader<bool, PTBPE2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE2` writer - Pull Enable for Port B Bit 2"]
 pub struct PTBPE2_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> PTBPE2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 2."]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> PTBPE2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<PTBPE3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE3`"]
-pub type PTBPE3_R = crate::R<bool, PTBPE3_A>;
+#[doc = "Field `PTBPE3` reader - Pull Enable for Port B Bit 3"]
+pub struct PTBPE3_R(crate::FieldReader<bool, PTBPE3_A>);
 impl PTBPE3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE3_A {
@@ -863,15 +976,22 @@ impl PTBPE3_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE3_A::_0
+        **self == PTBPE3_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE3_A::_1
+        **self == PTBPE3_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE3`"]
+impl core::ops::Deref for PTBPE3_R {
+    type Target = crate::FieldReader<bool, PTBPE3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE3` writer - Pull Enable for Port B Bit 3"]
 pub struct PTBPE3_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> PTBPE3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 3."]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> PTBPE3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1042,12 @@ impl From<PTBPE4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE4`"]
-pub type PTBPE4_R = crate::R<bool, PTBPE4_A>;
+#[doc = "Field `PTBPE4` reader - Pull Enable for Port B Bit 4"]
+pub struct PTBPE4_R(crate::FieldReader<bool, PTBPE4_A>);
 impl PTBPE4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE4_A {
@@ -938,15 +1059,22 @@ impl PTBPE4_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE4_A::_0
+        **self == PTBPE4_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE4_A::_1
+        **self == PTBPE4_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE4`"]
+impl core::ops::Deref for PTBPE4_R {
+    type Target = crate::FieldReader<bool, PTBPE4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE4` writer - Pull Enable for Port B Bit 4"]
 pub struct PTBPE4_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1082,7 @@ impl<'a> PTBPE4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 4."]
     #[inline(always)]
@@ -981,7 +1107,7 @@ impl<'a> PTBPE4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1125,12 @@ impl From<PTBPE5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE5`"]
-pub type PTBPE5_R = crate::R<bool, PTBPE5_A>;
+#[doc = "Field `PTBPE5` reader - Pull Enable for Port B Bit 5"]
+pub struct PTBPE5_R(crate::FieldReader<bool, PTBPE5_A>);
 impl PTBPE5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE5_A {
@@ -1013,15 +1142,22 @@ impl PTBPE5_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE5_A::_0
+        **self == PTBPE5_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE5_A::_1
+        **self == PTBPE5_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE5`"]
+impl core::ops::Deref for PTBPE5_R {
+    type Target = crate::FieldReader<bool, PTBPE5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE5` writer - Pull Enable for Port B Bit 5"]
 pub struct PTBPE5_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1165,7 @@ impl<'a> PTBPE5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 5."]
     #[inline(always)]
@@ -1056,7 +1190,7 @@ impl<'a> PTBPE5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1208,12 @@ impl From<PTBPE6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE6`"]
-pub type PTBPE6_R = crate::R<bool, PTBPE6_A>;
+#[doc = "Field `PTBPE6` reader - Pull Enable for Port B Bit 6"]
+pub struct PTBPE6_R(crate::FieldReader<bool, PTBPE6_A>);
 impl PTBPE6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE6_A {
@@ -1088,15 +1225,22 @@ impl PTBPE6_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE6_A::_0
+        **self == PTBPE6_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE6_A::_1
+        **self == PTBPE6_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE6`"]
+impl core::ops::Deref for PTBPE6_R {
+    type Target = crate::FieldReader<bool, PTBPE6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE6` writer - Pull Enable for Port B Bit 6"]
 pub struct PTBPE6_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1248,7 @@ impl<'a> PTBPE6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 6."]
     #[inline(always)]
@@ -1131,7 +1273,7 @@ impl<'a> PTBPE6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1291,12 @@ impl From<PTBPE7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTBPE7`"]
-pub type PTBPE7_R = crate::R<bool, PTBPE7_A>;
+#[doc = "Field `PTBPE7` reader - Pull Enable for Port B Bit 7"]
+pub struct PTBPE7_R(crate::FieldReader<bool, PTBPE7_A>);
 impl PTBPE7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTBPE7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTBPE7_A {
@@ -1163,15 +1308,22 @@ impl PTBPE7_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTBPE7_A::_0
+        **self == PTBPE7_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTBPE7_A::_1
+        **self == PTBPE7_A::_1
     }
 }
-#[doc = "Write proxy for field `PTBPE7`"]
+impl core::ops::Deref for PTBPE7_R {
+    type Target = crate::FieldReader<bool, PTBPE7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTBPE7` writer - Pull Enable for Port B Bit 7"]
 pub struct PTBPE7_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1331,7 @@ impl<'a> PTBPE7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTBPE7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port B bit 7."]
     #[inline(always)]
@@ -1206,7 +1356,7 @@ impl<'a> PTBPE7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1224,9 +1374,12 @@ impl From<PTCPE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE0`"]
-pub type PTCPE0_R = crate::R<bool, PTCPE0_A>;
+#[doc = "Field `PTCPE0` reader - Pull Enable for Port C Bit 0"]
+pub struct PTCPE0_R(crate::FieldReader<bool, PTCPE0_A>);
 impl PTCPE0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE0_A {
@@ -1238,15 +1391,22 @@ impl PTCPE0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE0_A::_0
+        **self == PTCPE0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE0_A::_1
+        **self == PTCPE0_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE0`"]
+impl core::ops::Deref for PTCPE0_R {
+    type Target = crate::FieldReader<bool, PTCPE0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE0` writer - Pull Enable for Port C Bit 0"]
 pub struct PTCPE0_W<'a> {
     w: &'a mut W,
 }
@@ -1254,9 +1414,7 @@ impl<'a> PTCPE0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 0."]
     #[inline(always)]
@@ -1281,7 +1439,7 @@ impl<'a> PTCPE0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -1299,9 +1457,12 @@ impl From<PTCPE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE1`"]
-pub type PTCPE1_R = crate::R<bool, PTCPE1_A>;
+#[doc = "Field `PTCPE1` reader - Pull Enable for Port C Bit 1"]
+pub struct PTCPE1_R(crate::FieldReader<bool, PTCPE1_A>);
 impl PTCPE1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE1_A {
@@ -1313,15 +1474,22 @@ impl PTCPE1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE1_A::_0
+        **self == PTCPE1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE1_A::_1
+        **self == PTCPE1_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE1`"]
+impl core::ops::Deref for PTCPE1_R {
+    type Target = crate::FieldReader<bool, PTCPE1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE1` writer - Pull Enable for Port C Bit 1"]
 pub struct PTCPE1_W<'a> {
     w: &'a mut W,
 }
@@ -1329,9 +1497,7 @@ impl<'a> PTCPE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 1."]
     #[inline(always)]
@@ -1356,7 +1522,7 @@ impl<'a> PTCPE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -1374,9 +1540,12 @@ impl From<PTCPE2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE2`"]
-pub type PTCPE2_R = crate::R<bool, PTCPE2_A>;
+#[doc = "Field `PTCPE2` reader - Pull Enable for Port C Bit 2"]
+pub struct PTCPE2_R(crate::FieldReader<bool, PTCPE2_A>);
 impl PTCPE2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE2_A {
@@ -1388,15 +1557,22 @@ impl PTCPE2_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE2_A::_0
+        **self == PTCPE2_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE2_A::_1
+        **self == PTCPE2_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE2`"]
+impl core::ops::Deref for PTCPE2_R {
+    type Target = crate::FieldReader<bool, PTCPE2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE2` writer - Pull Enable for Port C Bit 2"]
 pub struct PTCPE2_W<'a> {
     w: &'a mut W,
 }
@@ -1404,9 +1580,7 @@ impl<'a> PTCPE2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 2."]
     #[inline(always)]
@@ -1431,7 +1605,7 @@ impl<'a> PTCPE2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -1449,9 +1623,12 @@ impl From<PTCPE3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE3`"]
-pub type PTCPE3_R = crate::R<bool, PTCPE3_A>;
+#[doc = "Field `PTCPE3` reader - Pull Enable for Port C Bit 3"]
+pub struct PTCPE3_R(crate::FieldReader<bool, PTCPE3_A>);
 impl PTCPE3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE3_A {
@@ -1463,15 +1640,22 @@ impl PTCPE3_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE3_A::_0
+        **self == PTCPE3_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE3_A::_1
+        **self == PTCPE3_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE3`"]
+impl core::ops::Deref for PTCPE3_R {
+    type Target = crate::FieldReader<bool, PTCPE3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE3` writer - Pull Enable for Port C Bit 3"]
 pub struct PTCPE3_W<'a> {
     w: &'a mut W,
 }
@@ -1479,9 +1663,7 @@ impl<'a> PTCPE3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 3."]
     #[inline(always)]
@@ -1506,7 +1688,7 @@ impl<'a> PTCPE3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -1524,9 +1706,12 @@ impl From<PTCPE4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE4`"]
-pub type PTCPE4_R = crate::R<bool, PTCPE4_A>;
+#[doc = "Field `PTCPE4` reader - Pull Enable for Port C Bit 4"]
+pub struct PTCPE4_R(crate::FieldReader<bool, PTCPE4_A>);
 impl PTCPE4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE4_A {
@@ -1538,15 +1723,22 @@ impl PTCPE4_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE4_A::_0
+        **self == PTCPE4_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE4_A::_1
+        **self == PTCPE4_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE4`"]
+impl core::ops::Deref for PTCPE4_R {
+    type Target = crate::FieldReader<bool, PTCPE4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE4` writer - Pull Enable for Port C Bit 4"]
 pub struct PTCPE4_W<'a> {
     w: &'a mut W,
 }
@@ -1554,9 +1746,7 @@ impl<'a> PTCPE4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 4."]
     #[inline(always)]
@@ -1581,7 +1771,7 @@ impl<'a> PTCPE4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -1599,9 +1789,12 @@ impl From<PTCPE5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE5`"]
-pub type PTCPE5_R = crate::R<bool, PTCPE5_A>;
+#[doc = "Field `PTCPE5` reader - Pull Enable for Port C Bit 5"]
+pub struct PTCPE5_R(crate::FieldReader<bool, PTCPE5_A>);
 impl PTCPE5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE5_A {
@@ -1613,15 +1806,22 @@ impl PTCPE5_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE5_A::_0
+        **self == PTCPE5_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE5_A::_1
+        **self == PTCPE5_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE5`"]
+impl core::ops::Deref for PTCPE5_R {
+    type Target = crate::FieldReader<bool, PTCPE5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE5` writer - Pull Enable for Port C Bit 5"]
 pub struct PTCPE5_W<'a> {
     w: &'a mut W,
 }
@@ -1629,9 +1829,7 @@ impl<'a> PTCPE5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 5."]
     #[inline(always)]
@@ -1656,7 +1854,7 @@ impl<'a> PTCPE5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
@@ -1674,9 +1872,12 @@ impl From<PTCPE6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE6`"]
-pub type PTCPE6_R = crate::R<bool, PTCPE6_A>;
+#[doc = "Field `PTCPE6` reader - Pull Enable for Port C Bit 6"]
+pub struct PTCPE6_R(crate::FieldReader<bool, PTCPE6_A>);
 impl PTCPE6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE6_A {
@@ -1688,15 +1889,22 @@ impl PTCPE6_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE6_A::_0
+        **self == PTCPE6_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE6_A::_1
+        **self == PTCPE6_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE6`"]
+impl core::ops::Deref for PTCPE6_R {
+    type Target = crate::FieldReader<bool, PTCPE6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE6` writer - Pull Enable for Port C Bit 6"]
 pub struct PTCPE6_W<'a> {
     w: &'a mut W,
 }
@@ -1704,9 +1912,7 @@ impl<'a> PTCPE6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 6."]
     #[inline(always)]
@@ -1731,7 +1937,7 @@ impl<'a> PTCPE6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
@@ -1749,9 +1955,12 @@ impl From<PTCPE7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTCPE7`"]
-pub type PTCPE7_R = crate::R<bool, PTCPE7_A>;
+#[doc = "Field `PTCPE7` reader - Pull Enable for Port C Bit 7"]
+pub struct PTCPE7_R(crate::FieldReader<bool, PTCPE7_A>);
 impl PTCPE7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTCPE7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTCPE7_A {
@@ -1763,15 +1972,22 @@ impl PTCPE7_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTCPE7_A::_0
+        **self == PTCPE7_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTCPE7_A::_1
+        **self == PTCPE7_A::_1
     }
 }
-#[doc = "Write proxy for field `PTCPE7`"]
+impl core::ops::Deref for PTCPE7_R {
+    type Target = crate::FieldReader<bool, PTCPE7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTCPE7` writer - Pull Enable for Port C Bit 7"]
 pub struct PTCPE7_W<'a> {
     w: &'a mut W,
 }
@@ -1779,9 +1995,7 @@ impl<'a> PTCPE7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTCPE7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port C bit 7."]
     #[inline(always)]
@@ -1806,7 +2020,7 @@ impl<'a> PTCPE7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
@@ -1824,9 +2038,12 @@ impl From<PTDPE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE0`"]
-pub type PTDPE0_R = crate::R<bool, PTDPE0_A>;
+#[doc = "Field `PTDPE0` reader - Pull Enable for Port D Bit 0"]
+pub struct PTDPE0_R(crate::FieldReader<bool, PTDPE0_A>);
 impl PTDPE0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE0_A {
@@ -1838,15 +2055,22 @@ impl PTDPE0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE0_A::_0
+        **self == PTDPE0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE0_A::_1
+        **self == PTDPE0_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE0`"]
+impl core::ops::Deref for PTDPE0_R {
+    type Target = crate::FieldReader<bool, PTDPE0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE0` writer - Pull Enable for Port D Bit 0"]
 pub struct PTDPE0_W<'a> {
     w: &'a mut W,
 }
@@ -1854,9 +2078,7 @@ impl<'a> PTDPE0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 0."]
     #[inline(always)]
@@ -1881,7 +2103,7 @@ impl<'a> PTDPE0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -1899,9 +2121,12 @@ impl From<PTDPE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE1`"]
-pub type PTDPE1_R = crate::R<bool, PTDPE1_A>;
+#[doc = "Field `PTDPE1` reader - Pull Enable for Port D Bit 1"]
+pub struct PTDPE1_R(crate::FieldReader<bool, PTDPE1_A>);
 impl PTDPE1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE1_A {
@@ -1913,15 +2138,22 @@ impl PTDPE1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE1_A::_0
+        **self == PTDPE1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE1_A::_1
+        **self == PTDPE1_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE1`"]
+impl core::ops::Deref for PTDPE1_R {
+    type Target = crate::FieldReader<bool, PTDPE1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE1` writer - Pull Enable for Port D Bit 1"]
 pub struct PTDPE1_W<'a> {
     w: &'a mut W,
 }
@@ -1929,9 +2161,7 @@ impl<'a> PTDPE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 1."]
     #[inline(always)]
@@ -1956,7 +2186,7 @@ impl<'a> PTDPE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
@@ -1974,9 +2204,12 @@ impl From<PTDPE2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE2`"]
-pub type PTDPE2_R = crate::R<bool, PTDPE2_A>;
+#[doc = "Field `PTDPE2` reader - Pull Enable for Port D Bit 2"]
+pub struct PTDPE2_R(crate::FieldReader<bool, PTDPE2_A>);
 impl PTDPE2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE2_A {
@@ -1988,15 +2221,22 @@ impl PTDPE2_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE2_A::_0
+        **self == PTDPE2_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE2_A::_1
+        **self == PTDPE2_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE2`"]
+impl core::ops::Deref for PTDPE2_R {
+    type Target = crate::FieldReader<bool, PTDPE2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE2` writer - Pull Enable for Port D Bit 2"]
 pub struct PTDPE2_W<'a> {
     w: &'a mut W,
 }
@@ -2004,9 +2244,7 @@ impl<'a> PTDPE2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 2."]
     #[inline(always)]
@@ -2031,7 +2269,7 @@ impl<'a> PTDPE2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
@@ -2049,9 +2287,12 @@ impl From<PTDPE3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE3`"]
-pub type PTDPE3_R = crate::R<bool, PTDPE3_A>;
+#[doc = "Field `PTDPE3` reader - Pull Enable for Port D Bit 3"]
+pub struct PTDPE3_R(crate::FieldReader<bool, PTDPE3_A>);
 impl PTDPE3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE3_A {
@@ -2063,15 +2304,22 @@ impl PTDPE3_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE3_A::_0
+        **self == PTDPE3_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE3_A::_1
+        **self == PTDPE3_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE3`"]
+impl core::ops::Deref for PTDPE3_R {
+    type Target = crate::FieldReader<bool, PTDPE3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE3` writer - Pull Enable for Port D Bit 3"]
 pub struct PTDPE3_W<'a> {
     w: &'a mut W,
 }
@@ -2079,9 +2327,7 @@ impl<'a> PTDPE3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 3."]
     #[inline(always)]
@@ -2106,7 +2352,7 @@ impl<'a> PTDPE3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
@@ -2124,9 +2370,12 @@ impl From<PTDPE4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE4`"]
-pub type PTDPE4_R = crate::R<bool, PTDPE4_A>;
+#[doc = "Field `PTDPE4` reader - Pull Enable for Port D Bit 4"]
+pub struct PTDPE4_R(crate::FieldReader<bool, PTDPE4_A>);
 impl PTDPE4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE4_A {
@@ -2138,15 +2387,22 @@ impl PTDPE4_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE4_A::_0
+        **self == PTDPE4_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE4_A::_1
+        **self == PTDPE4_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE4`"]
+impl core::ops::Deref for PTDPE4_R {
+    type Target = crate::FieldReader<bool, PTDPE4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE4` writer - Pull Enable for Port D Bit 4"]
 pub struct PTDPE4_W<'a> {
     w: &'a mut W,
 }
@@ -2154,9 +2410,7 @@ impl<'a> PTDPE4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 4."]
     #[inline(always)]
@@ -2181,7 +2435,7 @@ impl<'a> PTDPE4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
@@ -2199,9 +2453,12 @@ impl From<PTDPE5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE5`"]
-pub type PTDPE5_R = crate::R<bool, PTDPE5_A>;
+#[doc = "Field `PTDPE5` reader - Pull Enable for Port D Bit 5"]
+pub struct PTDPE5_R(crate::FieldReader<bool, PTDPE5_A>);
 impl PTDPE5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE5_A {
@@ -2213,15 +2470,22 @@ impl PTDPE5_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE5_A::_0
+        **self == PTDPE5_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE5_A::_1
+        **self == PTDPE5_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE5`"]
+impl core::ops::Deref for PTDPE5_R {
+    type Target = crate::FieldReader<bool, PTDPE5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE5` writer - Pull Enable for Port D Bit 5"]
 pub struct PTDPE5_W<'a> {
     w: &'a mut W,
 }
@@ -2229,9 +2493,7 @@ impl<'a> PTDPE5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 5."]
     #[inline(always)]
@@ -2256,7 +2518,7 @@ impl<'a> PTDPE5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
@@ -2274,9 +2536,12 @@ impl From<PTDPE6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE6`"]
-pub type PTDPE6_R = crate::R<bool, PTDPE6_A>;
+#[doc = "Field `PTDPE6` reader - Pull Enable for Port D Bit 6"]
+pub struct PTDPE6_R(crate::FieldReader<bool, PTDPE6_A>);
 impl PTDPE6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE6_A {
@@ -2288,15 +2553,22 @@ impl PTDPE6_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE6_A::_0
+        **self == PTDPE6_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE6_A::_1
+        **self == PTDPE6_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE6`"]
+impl core::ops::Deref for PTDPE6_R {
+    type Target = crate::FieldReader<bool, PTDPE6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE6` writer - Pull Enable for Port D Bit 6"]
 pub struct PTDPE6_W<'a> {
     w: &'a mut W,
 }
@@ -2304,9 +2576,7 @@ impl<'a> PTDPE6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 6."]
     #[inline(always)]
@@ -2331,7 +2601,7 @@ impl<'a> PTDPE6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
@@ -2349,9 +2619,12 @@ impl From<PTDPE7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTDPE7`"]
-pub type PTDPE7_R = crate::R<bool, PTDPE7_A>;
+#[doc = "Field `PTDPE7` reader - Pull Enable for Port D Bit 7"]
+pub struct PTDPE7_R(crate::FieldReader<bool, PTDPE7_A>);
 impl PTDPE7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTDPE7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTDPE7_A {
@@ -2363,15 +2636,22 @@ impl PTDPE7_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTDPE7_A::_0
+        **self == PTDPE7_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTDPE7_A::_1
+        **self == PTDPE7_A::_1
     }
 }
-#[doc = "Write proxy for field `PTDPE7`"]
+impl core::ops::Deref for PTDPE7_R {
+    type Target = crate::FieldReader<bool, PTDPE7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTDPE7` writer - Pull Enable for Port D Bit 7"]
 pub struct PTDPE7_W<'a> {
     w: &'a mut W,
 }
@@ -2379,9 +2659,7 @@ impl<'a> PTDPE7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTDPE7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pullup is disabled for port D bit 7."]
     #[inline(always)]
@@ -2406,7 +2684,7 @@ impl<'a> PTDPE7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -2732,5 +3010,30 @@ impl W {
     #[inline(always)]
     pub fn ptdpe7(&mut self) -> PTDPE7_W {
         PTDPE7_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port Pullup Enable Low Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [puel](index.html) module"]
+pub struct PUEL_SPEC;
+impl crate::RegisterSpec for PUEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [puel::R](R) reader structure"]
+impl crate::Readable for PUEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [puel::W](W) writer structure"]
+impl crate::Writable for PUEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PUEL to value 0x0010_0000"]
+impl crate::Resettable for PUEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0010_0000
     }
 }

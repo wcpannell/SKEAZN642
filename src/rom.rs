@@ -2,73 +2,48 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Entry"]
-    pub entry: ENTRY,
+    pub entry: crate::Reg<entry::ENTRY_SPEC>,
     #[doc = "0x04 - End of Table Marker Register"]
-    pub tablemark: TABLEMARK,
+    pub tablemark: crate::Reg<tablemark::TABLEMARK_SPEC>,
     _reserved2: [u8; 4036usize],
     #[doc = "0xfcc - System Access Register"]
-    pub sysaccess: SYSACCESS,
+    pub sysaccess: crate::Reg<sysaccess::SYSACCESS_SPEC>,
     #[doc = "0xfd0 - Peripheral ID Register"]
-    pub periphid4: PERIPHID,
+    pub periphid4: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xfd4 - Peripheral ID Register"]
-    pub periphid5: PERIPHID,
+    pub periphid5: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xfd8 - Peripheral ID Register"]
-    pub periphid6: PERIPHID,
+    pub periphid6: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xfdc - Peripheral ID Register"]
-    pub periphid7: PERIPHID,
+    pub periphid7: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xfe0 - Peripheral ID Register"]
-    pub periphid0: PERIPHID,
+    pub periphid0: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xfe4 - Peripheral ID Register"]
-    pub periphid1: PERIPHID,
+    pub periphid1: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xfe8 - Peripheral ID Register"]
-    pub periphid2: PERIPHID,
+    pub periphid2: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xfec - Peripheral ID Register"]
-    pub periphid3: PERIPHID,
+    pub periphid3: crate::Reg<periphid::PERIPHID_SPEC>,
     #[doc = "0xff0 - Component ID Register"]
-    pub compid: [COMPID; 4],
+    pub compid: [crate::Reg<compid::COMPID_SPEC>; 4],
 }
-#[doc = "Entry\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [entry](entry) module"]
-pub type ENTRY = crate::Reg<u32, _ENTRY>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _ENTRY;
-#[doc = "`read()` method returns [entry::R](entry::R) reader structure"]
-impl crate::Readable for ENTRY {}
+#[doc = "ENTRY register accessor: an alias for `Reg<ENTRY_SPEC>`"]
+pub type ENTRY = crate::Reg<entry::ENTRY_SPEC>;
 #[doc = "Entry"]
 pub mod entry;
-#[doc = "End of Table Marker Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tablemark](tablemark) module"]
-pub type TABLEMARK = crate::Reg<u32, _TABLEMARK>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TABLEMARK;
-#[doc = "`read()` method returns [tablemark::R](tablemark::R) reader structure"]
-impl crate::Readable for TABLEMARK {}
+#[doc = "TABLEMARK register accessor: an alias for `Reg<TABLEMARK_SPEC>`"]
+pub type TABLEMARK = crate::Reg<tablemark::TABLEMARK_SPEC>;
 #[doc = "End of Table Marker Register"]
 pub mod tablemark;
-#[doc = "System Access Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysaccess](sysaccess) module"]
-pub type SYSACCESS = crate::Reg<u32, _SYSACCESS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SYSACCESS;
-#[doc = "`read()` method returns [sysaccess::R](sysaccess::R) reader structure"]
-impl crate::Readable for SYSACCESS {}
+#[doc = "SYSACCESS register accessor: an alias for `Reg<SYSACCESS_SPEC>`"]
+pub type SYSACCESS = crate::Reg<sysaccess::SYSACCESS_SPEC>;
 #[doc = "System Access Register"]
 pub mod sysaccess;
-#[doc = "Peripheral ID Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [periphid](periphid) module"]
-pub type PERIPHID = crate::Reg<u32, _PERIPHID>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PERIPHID;
-#[doc = "`read()` method returns [periphid::R](periphid::R) reader structure"]
-impl crate::Readable for PERIPHID {}
+#[doc = "PERIPHID register accessor: an alias for `Reg<PERIPHID_SPEC>`"]
+pub type PERIPHID = crate::Reg<periphid::PERIPHID_SPEC>;
 #[doc = "Peripheral ID Register"]
 pub mod periphid;
-#[doc = "Component ID Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [compid](compid) module"]
-pub type COMPID = crate::Reg<u32, _COMPID>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _COMPID;
-#[doc = "`read()` method returns [compid::R](compid::R) reader structure"]
-impl crate::Readable for COMPID {}
+#[doc = "COMPID register accessor: an alias for `Reg<COMPID_SPEC>`"]
+pub type COMPID = crate::Reg<compid::COMPID_SPEC>;
 #[doc = "Component ID Register"]
 pub mod compid;

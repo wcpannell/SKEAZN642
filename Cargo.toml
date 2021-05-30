@@ -1,6 +1,6 @@
 [package]
 name = "SKEAZN642"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["W. Clayton Pannell <clayton.pannell@gmail.com>"]
 edition = "2018"
 description = "Device support crate for KEAZN64 devices."
@@ -14,13 +14,13 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bare-metal = "0.2.0"
-cortex-m = "0.5.8"
-vcell = "0.1.0"
+bare-metal = "^1.0.0"
+cortex-m = "^0.7.0"
+vcell = "^0.1.0"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.6.5"
+version = "^0.6.14"
 
 [features]
 rt = ["cortex-m-rt/device"]

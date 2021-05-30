@@ -1,13 +1,35 @@
-#[doc = "Reader of register SC"]
-pub type R = crate::R<u8, super::SC>;
-#[doc = "Writer for register SC"]
-pub type W = crate::W<u8, super::SC>;
-#[doc = "Register SC `reset()`'s with value 0"]
-impl crate::ResetValue for super::SC {
-    type Type = u8;
+#[doc = "Register `SC` reader"]
+pub struct R(crate::R<SC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SC_SPEC>> for R {
+    fn from(reader: crate::R<SC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SC` writer"]
+pub struct W(crate::W<SC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SC_SPEC>> for W {
+    fn from(writer: crate::W<SC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "IRQ Detection Mode\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<IRQMOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRQMOD`"]
-pub type IRQMOD_R = crate::R<bool, IRQMOD_A>;
+#[doc = "Field `IRQMOD` reader - IRQ Detection Mode"]
+pub struct IRQMOD_R(crate::FieldReader<bool, IRQMOD_A>);
 impl IRQMOD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IRQMOD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRQMOD_A {
@@ -38,15 +63,22 @@ impl IRQMOD_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == IRQMOD_A::_0
+        **self == IRQMOD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == IRQMOD_A::_1
+        **self == IRQMOD_A::_1
     }
 }
-#[doc = "Write proxy for field `IRQMOD`"]
+impl core::ops::Deref for IRQMOD_R {
+    type Target = crate::FieldReader<bool, IRQMOD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IRQMOD` writer - IRQ Detection Mode"]
 pub struct IRQMOD_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> IRQMOD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IRQMOD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "IRQ event is detected only on falling/rising edges."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> IRQMOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<IRQIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRQIE`"]
-pub type IRQIE_R = crate::R<bool, IRQIE_A>;
+#[doc = "Field `IRQIE` reader - IRQ Interrupt Enable"]
+pub struct IRQIE_R(crate::FieldReader<bool, IRQIE_A>);
 impl IRQIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IRQIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRQIE_A {
@@ -113,15 +146,22 @@ impl IRQIE_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == IRQIE_A::_0
+        **self == IRQIE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == IRQIE_A::_1
+        **self == IRQIE_A::_1
     }
 }
-#[doc = "Write proxy for field `IRQIE`"]
+impl core::ops::Deref for IRQIE_R {
+    type Target = crate::FieldReader<bool, IRQIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IRQIE` writer - IRQ Interrupt Enable"]
 pub struct IRQIE_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> IRQIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IRQIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt request when IRQF set is disabled (use polling)."]
     #[inline(always)]
@@ -156,11 +194,11 @@ impl<'a> IRQIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `IRQACK`"]
+#[doc = "Field `IRQACK` writer - IRQ Acknowledge"]
 pub struct IRQACK_W<'a> {
     w: &'a mut W,
 }
@@ -178,7 +216,7 @@ impl<'a> IRQACK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
         self.w
     }
 }
@@ -196,9 +234,12 @@ impl From<IRQF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRQF`"]
-pub type IRQF_R = crate::R<bool, IRQF_A>;
+#[doc = "Field `IRQF` reader - IRQ Flag"]
+pub struct IRQF_R(crate::FieldReader<bool, IRQF_A>);
 impl IRQF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IRQF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRQF_A {
@@ -210,12 +251,19 @@ impl IRQF_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == IRQF_A::_0
+        **self == IRQF_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == IRQF_A::_1
+        **self == IRQF_A::_1
+    }
+}
+impl core::ops::Deref for IRQF_R {
+    type Target = crate::FieldReader<bool, IRQF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "IRQ Pin Enable\n\nValue on reset: 0"]
@@ -232,9 +280,12 @@ impl From<IRQPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRQPE`"]
-pub type IRQPE_R = crate::R<bool, IRQPE_A>;
+#[doc = "Field `IRQPE` reader - IRQ Pin Enable"]
+pub struct IRQPE_R(crate::FieldReader<bool, IRQPE_A>);
 impl IRQPE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IRQPE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRQPE_A {
@@ -246,15 +297,22 @@ impl IRQPE_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == IRQPE_A::_0
+        **self == IRQPE_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == IRQPE_A::_1
+        **self == IRQPE_A::_1
     }
 }
-#[doc = "Write proxy for field `IRQPE`"]
+impl core::ops::Deref for IRQPE_R {
+    type Target = crate::FieldReader<bool, IRQPE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IRQPE` writer - IRQ Pin Enable"]
 pub struct IRQPE_W<'a> {
     w: &'a mut W,
 }
@@ -262,9 +320,7 @@ impl<'a> IRQPE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IRQPE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "IRQ pin function is disabled."]
     #[inline(always)]
@@ -289,7 +345,7 @@ impl<'a> IRQPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u8) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
         self.w
     }
 }
@@ -307,9 +363,12 @@ impl From<IRQEDG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRQEDG`"]
-pub type IRQEDG_R = crate::R<bool, IRQEDG_A>;
+#[doc = "Field `IRQEDG` reader - Interrupt Request (IRQ) Edge Select"]
+pub struct IRQEDG_R(crate::FieldReader<bool, IRQEDG_A>);
 impl IRQEDG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IRQEDG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRQEDG_A {
@@ -321,15 +380,22 @@ impl IRQEDG_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == IRQEDG_A::_0
+        **self == IRQEDG_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == IRQEDG_A::_1
+        **self == IRQEDG_A::_1
     }
 }
-#[doc = "Write proxy for field `IRQEDG`"]
+impl core::ops::Deref for IRQEDG_R {
+    type Target = crate::FieldReader<bool, IRQEDG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IRQEDG` writer - Interrupt Request (IRQ) Edge Select"]
 pub struct IRQEDG_W<'a> {
     w: &'a mut W,
 }
@@ -337,9 +403,7 @@ impl<'a> IRQEDG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IRQEDG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "IRQ is falling-edge or falling-edge/low-level sensitive."]
     #[inline(always)]
@@ -364,7 +428,7 @@ impl<'a> IRQEDG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u8) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
         self.w
     }
 }
@@ -382,9 +446,12 @@ impl From<IRQPDD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRQPDD`"]
-pub type IRQPDD_R = crate::R<bool, IRQPDD_A>;
+#[doc = "Field `IRQPDD` reader - Interrupt Request (IRQ) Pull Device Disable"]
+pub struct IRQPDD_R(crate::FieldReader<bool, IRQPDD_A>);
 impl IRQPDD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IRQPDD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRQPDD_A {
@@ -396,15 +463,22 @@ impl IRQPDD_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == IRQPDD_A::_0
+        **self == IRQPDD_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == IRQPDD_A::_1
+        **self == IRQPDD_A::_1
     }
 }
-#[doc = "Write proxy for field `IRQPDD`"]
+impl core::ops::Deref for IRQPDD_R {
+    type Target = crate::FieldReader<bool, IRQPDD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IRQPDD` writer - Interrupt Request (IRQ) Pull Device Disable"]
 pub struct IRQPDD_W<'a> {
     w: &'a mut W,
 }
@@ -412,9 +486,7 @@ impl<'a> IRQPDD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: IRQPDD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "IRQ pull device enabled if IRQPE = 1."]
     #[inline(always)]
@@ -439,7 +511,7 @@ impl<'a> IRQPDD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u8) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u8 & 0x01) << 6);
         self.w
     }
 }
@@ -505,5 +577,30 @@ impl W {
     #[inline(always)]
     pub fn irqpdd(&mut self) -> IRQPDD_W {
         IRQPDD_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Pin Request Status and Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sc](index.html) module"]
+pub struct SC_SPEC;
+impl crate::RegisterSpec for SC_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [sc::R](R) reader structure"]
+impl crate::Readable for SC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sc::W](W) writer structure"]
+impl crate::Writable for SC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SC to value 0"]
+impl crate::Resettable for SC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,35 @@
-#[doc = "Reader of register OUTINIT"]
-pub type R = crate::R<u32, super::OUTINIT>;
-#[doc = "Writer for register OUTINIT"]
-pub type W = crate::W<u32, super::OUTINIT>;
-#[doc = "Register OUTINIT `reset()`'s with value 0"]
-impl crate::ResetValue for super::OUTINIT {
-    type Type = u32;
+#[doc = "Register `OUTINIT` reader"]
+pub struct R(crate::R<OUTINIT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<OUTINIT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<OUTINIT_SPEC>> for R {
+    fn from(reader: crate::R<OUTINIT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `OUTINIT` writer"]
+pub struct W(crate::W<OUTINIT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<OUTINIT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<OUTINIT_SPEC>> for W {
+    fn from(writer: crate::W<OUTINIT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Channel 0 Output Initialization Value\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<CH0OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH0OI`"]
-pub type CH0OI_R = crate::R<bool, CH0OI_A>;
+#[doc = "Field `CH0OI` reader - Channel 0 Output Initialization Value"]
+pub struct CH0OI_R(crate::FieldReader<bool, CH0OI_A>);
 impl CH0OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0OI_A {
@@ -38,15 +63,22 @@ impl CH0OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH0OI_A::_0
+        **self == CH0OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH0OI_A::_1
+        **self == CH0OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH0OI`"]
+impl core::ops::Deref for CH0OI_R {
+    type Target = crate::FieldReader<bool, CH0OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH0OI` writer - Channel 0 Output Initialization Value"]
 pub struct CH0OI_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> CH0OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH0OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> CH0OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<CH1OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH1OI`"]
-pub type CH1OI_R = crate::R<bool, CH1OI_A>;
+#[doc = "Field `CH1OI` reader - Channel 1 Output Initialization Value"]
+pub struct CH1OI_R(crate::FieldReader<bool, CH1OI_A>);
 impl CH1OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1OI_A {
@@ -113,15 +146,22 @@ impl CH1OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH1OI_A::_0
+        **self == CH1OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH1OI_A::_1
+        **self == CH1OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH1OI`"]
+impl core::ops::Deref for CH1OI_R {
+    type Target = crate::FieldReader<bool, CH1OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1OI` writer - Channel 1 Output Initialization Value"]
 pub struct CH1OI_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> CH1OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH1OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> CH1OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<CH2OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH2OI`"]
-pub type CH2OI_R = crate::R<bool, CH2OI_A>;
+#[doc = "Field `CH2OI` reader - Channel 2 Output Initialization Value"]
+pub struct CH2OI_R(crate::FieldReader<bool, CH2OI_A>);
 impl CH2OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2OI_A {
@@ -188,15 +229,22 @@ impl CH2OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH2OI_A::_0
+        **self == CH2OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH2OI_A::_1
+        **self == CH2OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH2OI`"]
+impl core::ops::Deref for CH2OI_R {
+    type Target = crate::FieldReader<bool, CH2OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2OI` writer - Channel 2 Output Initialization Value"]
 pub struct CH2OI_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> CH2OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH2OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> CH2OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<CH3OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH3OI`"]
-pub type CH3OI_R = crate::R<bool, CH3OI_A>;
+#[doc = "Field `CH3OI` reader - Channel 3 Output Initialization Value"]
+pub struct CH3OI_R(crate::FieldReader<bool, CH3OI_A>);
 impl CH3OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3OI_A {
@@ -263,15 +312,22 @@ impl CH3OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH3OI_A::_0
+        **self == CH3OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH3OI_A::_1
+        **self == CH3OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH3OI`"]
+impl core::ops::Deref for CH3OI_R {
+    type Target = crate::FieldReader<bool, CH3OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3OI` writer - Channel 3 Output Initialization Value"]
 pub struct CH3OI_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> CH3OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH3OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> CH3OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<CH4OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH4OI`"]
-pub type CH4OI_R = crate::R<bool, CH4OI_A>;
+#[doc = "Field `CH4OI` reader - Channel 4 Output Initialization Value"]
+pub struct CH4OI_R(crate::FieldReader<bool, CH4OI_A>);
 impl CH4OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH4OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH4OI_A {
@@ -338,15 +395,22 @@ impl CH4OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH4OI_A::_0
+        **self == CH4OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH4OI_A::_1
+        **self == CH4OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH4OI`"]
+impl core::ops::Deref for CH4OI_R {
+    type Target = crate::FieldReader<bool, CH4OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH4OI` writer - Channel 4 Output Initialization Value"]
 pub struct CH4OI_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> CH4OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH4OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> CH4OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<CH5OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH5OI`"]
-pub type CH5OI_R = crate::R<bool, CH5OI_A>;
+#[doc = "Field `CH5OI` reader - Channel 5 Output Initialization Value"]
+pub struct CH5OI_R(crate::FieldReader<bool, CH5OI_A>);
 impl CH5OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH5OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH5OI_A {
@@ -413,15 +478,22 @@ impl CH5OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH5OI_A::_0
+        **self == CH5OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH5OI_A::_1
+        **self == CH5OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH5OI`"]
+impl core::ops::Deref for CH5OI_R {
+    type Target = crate::FieldReader<bool, CH5OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH5OI` writer - Channel 5 Output Initialization Value"]
 pub struct CH5OI_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> CH5OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH5OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> CH5OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<CH6OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH6OI`"]
-pub type CH6OI_R = crate::R<bool, CH6OI_A>;
+#[doc = "Field `CH6OI` reader - Channel 6 Output Initialization Value"]
+pub struct CH6OI_R(crate::FieldReader<bool, CH6OI_A>);
 impl CH6OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH6OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH6OI_A {
@@ -488,15 +561,22 @@ impl CH6OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH6OI_A::_0
+        **self == CH6OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH6OI_A::_1
+        **self == CH6OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH6OI`"]
+impl core::ops::Deref for CH6OI_R {
+    type Target = crate::FieldReader<bool, CH6OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH6OI` writer - Channel 6 Output Initialization Value"]
 pub struct CH6OI_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> CH6OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH6OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> CH6OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<CH7OI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH7OI`"]
-pub type CH7OI_R = crate::R<bool, CH7OI_A>;
+#[doc = "Field `CH7OI` reader - Channel 7 Output Initialization Value"]
+pub struct CH7OI_R(crate::FieldReader<bool, CH7OI_A>);
 impl CH7OI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH7OI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH7OI_A {
@@ -563,15 +644,22 @@ impl CH7OI_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CH7OI_A::_0
+        **self == CH7OI_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CH7OI_A::_1
+        **self == CH7OI_A::_1
     }
 }
-#[doc = "Write proxy for field `CH7OI`"]
+impl core::ops::Deref for CH7OI_R {
+    type Target = crate::FieldReader<bool, CH7OI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH7OI` writer - Channel 7 Output Initialization Value"]
 pub struct CH7OI_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> CH7OI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH7OI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The initialization value is 0."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> CH7OI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -692,5 +778,30 @@ impl W {
     #[inline(always)]
     pub fn ch7oi(&mut self) -> CH7OI_W {
         CH7OI_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Initial State For Channels Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [outinit](index.html) module"]
+pub struct OUTINIT_SPEC;
+impl crate::RegisterSpec for OUTINIT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [outinit::R](R) reader structure"]
+impl crate::Readable for OUTINIT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [outinit::W](W) writer structure"]
+impl crate::Writable for OUTINIT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets OUTINIT to value 0"]
+impl crate::Resettable for OUTINIT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

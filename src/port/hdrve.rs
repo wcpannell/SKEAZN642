@@ -1,13 +1,35 @@
-#[doc = "Reader of register HDRVE"]
-pub type R = crate::R<u32, super::HDRVE>;
-#[doc = "Writer for register HDRVE"]
-pub type W = crate::W<u32, super::HDRVE>;
-#[doc = "Register HDRVE `reset()`'s with value 0"]
-impl crate::ResetValue for super::HDRVE {
-    type Type = u32;
+#[doc = "Register `HDRVE` reader"]
+pub struct R(crate::R<HDRVE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HDRVE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<HDRVE_SPEC>> for R {
+    fn from(reader: crate::R<HDRVE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `HDRVE` writer"]
+pub struct W(crate::W<HDRVE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<HDRVE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<HDRVE_SPEC>> for W {
+    fn from(writer: crate::W<HDRVE_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "High Current Drive Capability of PTB4\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<PTB4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTB4`"]
-pub type PTB4_R = crate::R<bool, PTB4_A>;
+#[doc = "Field `PTB4` reader - High Current Drive Capability of PTB4"]
+pub struct PTB4_R(crate::FieldReader<bool, PTB4_A>);
 impl PTB4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTB4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTB4_A {
@@ -38,15 +63,22 @@ impl PTB4_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTB4_A::_0
+        **self == PTB4_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTB4_A::_1
+        **self == PTB4_A::_1
     }
 }
-#[doc = "Write proxy for field `PTB4`"]
+impl core::ops::Deref for PTB4_R {
+    type Target = crate::FieldReader<bool, PTB4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTB4` writer - High Current Drive Capability of PTB4"]
 pub struct PTB4_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> PTB4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTB4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTB4 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> PTB4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<PTB5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTB5`"]
-pub type PTB5_R = crate::R<bool, PTB5_A>;
+#[doc = "Field `PTB5` reader - High Current Drive Capability of PTB5"]
+pub struct PTB5_R(crate::FieldReader<bool, PTB5_A>);
 impl PTB5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTB5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTB5_A {
@@ -113,15 +146,22 @@ impl PTB5_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTB5_A::_0
+        **self == PTB5_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTB5_A::_1
+        **self == PTB5_A::_1
     }
 }
-#[doc = "Write proxy for field `PTB5`"]
+impl core::ops::Deref for PTB5_R {
+    type Target = crate::FieldReader<bool, PTB5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTB5` writer - High Current Drive Capability of PTB5"]
 pub struct PTB5_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> PTB5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTB5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTB5 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> PTB5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<PTD0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTD0`"]
-pub type PTD0_R = crate::R<bool, PTD0_A>;
+#[doc = "Field `PTD0` reader - High Current Drive Capability of PTD0"]
+pub struct PTD0_R(crate::FieldReader<bool, PTD0_A>);
 impl PTD0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTD0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTD0_A {
@@ -188,15 +229,22 @@ impl PTD0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTD0_A::_0
+        **self == PTD0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTD0_A::_1
+        **self == PTD0_A::_1
     }
 }
-#[doc = "Write proxy for field `PTD0`"]
+impl core::ops::Deref for PTD0_R {
+    type Target = crate::FieldReader<bool, PTD0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTD0` writer - High Current Drive Capability of PTD0"]
 pub struct PTD0_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> PTD0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTD0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTD0 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> PTD0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<PTD1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTD1`"]
-pub type PTD1_R = crate::R<bool, PTD1_A>;
+#[doc = "Field `PTD1` reader - High Current Drive Capability of PTD1"]
+pub struct PTD1_R(crate::FieldReader<bool, PTD1_A>);
 impl PTD1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTD1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTD1_A {
@@ -263,15 +312,22 @@ impl PTD1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTD1_A::_0
+        **self == PTD1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTD1_A::_1
+        **self == PTD1_A::_1
     }
 }
-#[doc = "Write proxy for field `PTD1`"]
+impl core::ops::Deref for PTD1_R {
+    type Target = crate::FieldReader<bool, PTD1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTD1` writer - High Current Drive Capability of PTD1"]
 pub struct PTD1_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> PTD1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTD1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTD1 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> PTD1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<PTE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTE0`"]
-pub type PTE0_R = crate::R<bool, PTE0_A>;
+#[doc = "Field `PTE0` reader - High Current Drive Capability of PTE0"]
+pub struct PTE0_R(crate::FieldReader<bool, PTE0_A>);
 impl PTE0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTE0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTE0_A {
@@ -338,15 +395,22 @@ impl PTE0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTE0_A::_0
+        **self == PTE0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTE0_A::_1
+        **self == PTE0_A::_1
     }
 }
-#[doc = "Write proxy for field `PTE0`"]
+impl core::ops::Deref for PTE0_R {
+    type Target = crate::FieldReader<bool, PTE0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTE0` writer - High Current Drive Capability of PTE0"]
 pub struct PTE0_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> PTE0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTE0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTE0 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> PTE0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<PTE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTE1`"]
-pub type PTE1_R = crate::R<bool, PTE1_A>;
+#[doc = "Field `PTE1` reader - High Current Drive Capability of PTE1"]
+pub struct PTE1_R(crate::FieldReader<bool, PTE1_A>);
 impl PTE1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTE1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTE1_A {
@@ -413,15 +478,22 @@ impl PTE1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTE1_A::_0
+        **self == PTE1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTE1_A::_1
+        **self == PTE1_A::_1
     }
 }
-#[doc = "Write proxy for field `PTE1`"]
+impl core::ops::Deref for PTE1_R {
+    type Target = crate::FieldReader<bool, PTE1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTE1` writer - High Current Drive Capability of PTE1"]
 pub struct PTE1_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> PTE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTE1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTE1 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> PTE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<PTH0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTH0`"]
-pub type PTH0_R = crate::R<bool, PTH0_A>;
+#[doc = "Field `PTH0` reader - High Current Drive Capability of PTH0"]
+pub struct PTH0_R(crate::FieldReader<bool, PTH0_A>);
 impl PTH0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTH0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTH0_A {
@@ -488,15 +561,22 @@ impl PTH0_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTH0_A::_0
+        **self == PTH0_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTH0_A::_1
+        **self == PTH0_A::_1
     }
 }
-#[doc = "Write proxy for field `PTH0`"]
+impl core::ops::Deref for PTH0_R {
+    type Target = crate::FieldReader<bool, PTH0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTH0` writer - High Current Drive Capability of PTH0"]
 pub struct PTH0_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> PTH0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTH0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTH0 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> PTH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<PTH1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PTH1`"]
-pub type PTH1_R = crate::R<bool, PTH1_A>;
+#[doc = "Field `PTH1` reader - High Current Drive Capability of PTH1"]
+pub struct PTH1_R(crate::FieldReader<bool, PTH1_A>);
 impl PTH1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PTH1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PTH1_A {
@@ -563,15 +644,22 @@ impl PTH1_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PTH1_A::_0
+        **self == PTH1_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PTH1_A::_1
+        **self == PTH1_A::_1
     }
 }
-#[doc = "Write proxy for field `PTH1`"]
+impl core::ops::Deref for PTH1_R {
+    type Target = crate::FieldReader<bool, PTH1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTH1` writer - High Current Drive Capability of PTH1"]
 pub struct PTH1_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> PTH1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PTH1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PTH1 is disabled to offer high current drive capability."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> PTH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -692,5 +778,30 @@ impl W {
     #[inline(always)]
     pub fn pth1(&mut self) -> PTH1_W {
         PTH1_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port High Drive Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdrve](index.html) module"]
+pub struct HDRVE_SPEC;
+impl crate::RegisterSpec for HDRVE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [hdrve::R](R) reader structure"]
+impl crate::Readable for HDRVE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [hdrve::W](W) writer structure"]
+impl crate::Writable for HDRVE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets HDRVE to value 0"]
+impl crate::Resettable for HDRVE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

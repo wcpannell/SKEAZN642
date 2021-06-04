@@ -447,6 +447,20 @@ impl<'a> LVWIE_W<'a> {
         self.w
     }
 }
+#[doc = "Field `LVWACK` reader - Low-Voltage Warning Acknowledge"]
+pub struct LVWACK_R(crate::FieldReader<bool, bool>);
+impl LVWACK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LVWACK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LVWACK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Field `LVWACK` writer - Low-Voltage Warning Acknowledge"]
 pub struct LVWACK_W<'a> {
     w: &'a mut W,
@@ -540,6 +554,11 @@ impl R {
     #[inline(always)]
     pub fn lvwie(&self) -> LVWIE_R {
         LVWIE_R::new(((self.bits >> 5) & 0x01) != 0)
+    }
+    #[doc = "Bit 6 - Low-Voltage Warning Acknowledge"]
+    #[inline(always)]
+    pub fn lvwack(&self) -> LVWACK_R {
+        LVWACK_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Low-Voltage Warning Flag"]
     #[inline(always)]

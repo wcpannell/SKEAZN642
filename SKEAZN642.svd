@@ -17444,7 +17444,8 @@
               <description>Low-Voltage Warning Acknowledge</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>write-only</access>
+	      <access>read-write</access>
+	      <modifiedWriteValues>oneToClear</modifiedWriteValues>
             </field>
             <field>
               <name>LVWF</name>
